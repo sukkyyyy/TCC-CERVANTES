@@ -1,0 +1,232 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5ede6; /* bege claro da logo */
+    color: #4b3f36; /* marrom escuro para textos */
+}
+
+/* Header */
+header {
+    background-color: #ffffff; /* branco elegante */
+    padding: 20px 5%;
+    border-bottom: 2px solid #c59f77; /* linha dourada */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #c59f77; /* dourado */
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+/* Menu */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4b3f36; /* texto marrom escuro */
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav ul li a:hover {
+    color: #c59f77; /* dourado ao passar mouse */
+}
+
+/* Vitrine de produtos */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.vitrine {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card-produto {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card-produto img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.card-produto h3 {
+    margin: 15px 0 10px;
+    color: #c59f77; /* dourado nos títulos */
+}
+
+.descricao {
+    font-size: 0.9em;
+    color: #4b3f36;
+    margin-bottom: 15px;
+}
+
+.preco {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #c59f77; /* dourado */
+}
+
+.btn-comprar {
+    background-color: #c59f77; /* dourado */
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-comprar:hover {
+    background-color: #b0896f; /* dourado mais escuro */
+}
+
+/* WhatsApp */
+.suporte-whatsapp {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5ede6;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25D366; /* verde oficial do WhatsApp */
+    color: #ffffff; /* mantém o texto branco */
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-whatsapp:hover {
+    background-color: #20ba5a; /* verde mais escuro ao passar o mouse */
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.btn-whatsapp:active {
+    transform: translateY(0);
+}
+
+/* Ajuste da logo e do texto */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* espaço entre a imagem e o texto */
+}
+
+.logo-img {
+    height: 60px;        /* aumenta a altura da imagem */
+    width: 60px;         /* garante proporção quadrada */
+    object-fit: contain; /* mantém proporção sem distorcer */
+    border-radius: 12px; /* cantos arredondados */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* sombra suave */
+    transition: transform 0.3s;
+}
+
+.logo-img:hover {
+    transform: scale(1.05); /* efeito leve ao passar o mouse */
+}
+
+.logo span {
+    font-size: 1.8rem;   /* aumenta o tamanho do texto */
+    font-weight: 700;    /* negrito */
+    color: #c59f77;      /* dourado da marca */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 45px;
+        width: 45px;
+    }
+    .logo span {
+        font-size: 1.4rem;
+    }
+}
+
+/* Destaque apenas nos textos do menu */
+nav ul li a {
+    color: #c59f77; /* cor dourada apenas nos textos */
+    font-weight: 700; /* deixa em negrito */
+    text-decoration: none;
+    padding: 4px 8px; /* um pequeno espaço interno opcional */
+    border-radius: 4px; /* cantos levemente arredondados se quiser */
+    transition: color 0.3s, transform 0.2s;
+}
+
+/* Ao passar o mouse, aumenta o destaque */
+nav ul li a:hover {
+    color: #b0896f; /* dourado mais escuro */
+    transform: scale(1.05); /* leve efeito de zoom */
+    background: none; /* sem fundo extra, apenas destaca o texto */
+}
+
+/* Fundo bege apenas atrás dos textos do menu */
+nav ul li a {
+    background-color: #f5ede6; /* bege suave combinando com o site */
+    color: #000000; /* letras pretas */
+    font-weight: 700;
+    text-decoration: none;
+    padding: 8px 16px; /* espaço interno no bloco */
+    border-radius: 8px; /* cantos arredondados */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover com leve destaque */
+nav ul li a:hover {
+    background-color: #e8ded3; /* bege mais escuro ao passar o mouse */
+    transform: scale(1.05); /* leve zoom */
+}
