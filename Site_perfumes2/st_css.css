@@ -1,3 +1,10 @@
+Aqui está o código completo do seu arquivo **`st_css.css`** com a cor do bloco do WhatsApp alterada.
+
+Para combinar perfeitamente com a identidade visual da *Divine Cherie*, mudei o fundo do card para um **bege mais escuro** (usando o tom `#e8ded3`, que já está presente no efeito de passar o mouse nos botões do menu). Também aproveitei para ajustar a cor do texto do parágrafo interno para garantir um bom contraste e leitura.
+
+Substitua todo o conteúdo do seu arquivo **`st_css.css`** por este:
+
+```css
 /* Reset básico */
 * {
     margin: 0;
@@ -14,7 +21,7 @@ body {
 /* Header */
 header {
     background-color: #ffffff; /* branco elegante */
-    padding: 20px 5%;
+    padding: 10px 5%;
     border-bottom: 2px solid #c59f77; /* linha dourada */
 }
 
@@ -28,35 +35,69 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     font-weight: bold;
-    font-size: 1.5rem;
-    color: #c59f77; /* dourado */
+    font-size: 1.8rem;
+    color: #c59f77;
 }
 
 .logo-img {
-    height: 50px;
-    width: auto;
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
 
-/* Menu */
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Container do Menu (Alinha botões + imagem) */
+.menu-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 nav ul {
     display: flex;
     list-style: none;
     gap: 20px;
 }
 
+/* Fundo bege atrás dos textos do menu */
 nav ul li a {
+    background-color: #f5ede6;
+    color: #000000;
+    font-weight: 700;
     text-decoration: none;
-    color: #4b3f36; /* texto marrom escuro */
-    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: background-color 0.3s, transform 0.2s, color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #c59f77; /* dourado ao passar mouse */
+    background-color: #e8ded3;
+    transform: scale(1.05);
+    color: #b0896f;
+}
+
+/* Estilização da nova imagem de status */
+.img-desenvolvimento {
+    height: 40px;
+    width: 40px;                 /* Fixa a largura para não ficar gigante */
+    object-fit: contain;         /* Garante que a imagem se ajuste perfeitamente ao quadrado */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.img-desenvolvimento:hover {
+    transform: scale(1.08);
 }
 
 /* Vitrine de produtos */
@@ -80,6 +121,12 @@ nav ul li a:hover {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: transform 0.3s, box-shadow 0.3s;
+    
+    /* ALINHAMENTO DO CARD: Centraliza e distribui os elementos igualmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .card-produto:hover {
@@ -88,13 +135,17 @@ nav ul li a:hover {
 }
 
 .card-produto img {
-    max-width: 100%;
+    width: 100%;
+    height: 250px;           /* Mantém a altura elegante padrão */
+    object-fit: contain;     /* Garante que os frascos fiquem inteiros */
     border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* Transição suave para o ajuste */
 }
 
 .card-produto h3 {
     margin: 15px 0 10px;
-    color: #c59f77; /* dourado nos títulos */
+    color: #c59f77;
 }
 
 .descricao {
@@ -108,11 +159,11 @@ nav ul li a:hover {
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #c59f77; /* dourado */
+    color: #c59f77;
 }
 
 .btn-comprar {
-    background-color: #c59f77; /* dourado */
+    background-color: #c59f77;
     color: #ffffff;
     border: none;
     padding: 12px 20px;
@@ -124,23 +175,35 @@ nav ul li a:hover {
 }
 
 .btn-comprar:hover {
-    background-color: #b0896f; /* dourado mais escuro */
+    background-color: #b0896f;
 }
 
 /* WhatsApp */
+.rodape-site {
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
 .suporte-whatsapp {
     text-align: center;
     padding: 20px;
-    background-color: #f5ede6;
+    background-color: #e8ded3;   /* 🛠️ ALTERADO: Bege mais escuro elegante */
     border-radius: 12px;
     margin: 20px auto;
     max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.suporte-whatsapp p {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #4b3f36;              /* Mantém o texto bem legível sobre o fundo bege */
 }
 
 .btn-whatsapp {
     display: inline-block;
-    background-color: #25D366; /* verde oficial do WhatsApp */
-    color: #ffffff; /* mantém o texto branco */
+    background-color: #25D366;
+    color: #ffffff;
     text-decoration: none;
     padding: 12px 24px;
     border-radius: 50px;
@@ -151,39 +214,9 @@ nav ul li a:hover {
 }
 
 .btn-whatsapp:hover {
-    background-color: #20ba5a; /* verde mais escuro ao passar o mouse */
+    background-color: #20ba5a;
     transform: translateY(-2px);
     color: #ffffff;
-}
-
-.btn-whatsapp:active {
-    transform: translateY(0);
-}
-
-/* Ajuste da logo e do texto */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* espaço entre a imagem e o texto */
-}
-
-.logo-img {
-    height: 60px;        /* aumenta a altura da imagem */
-    width: 60px;         /* garante proporção quadrada */
-    object-fit: contain; /* mantém proporção sem distorcer */
-    border-radius: 12px; /* cantos arredondados */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* sombra suave */
-    transition: transform 0.3s;
-}
-
-.logo-img:hover {
-    transform: scale(1.05); /* efeito leve ao passar o mouse */
-}
-
-.logo span {
-    font-size: 1.8rem;   /* aumenta o tamanho do texto */
-    font-weight: 700;    /* negrito */
-    color: #c59f77;      /* dourado da marca */
 }
 
 /* Responsividade para telas menores */
@@ -195,38 +228,15 @@ nav ul li a:hover {
     .logo span {
         font-size: 1.4rem;
     }
-}
-
-/* Destaque apenas nos textos do menu */
-nav ul li a {
-    color: #c59f77; /* cor dourada apenas nos textos */
-    font-weight: 700; /* deixa em negrito */
-    text-decoration: none;
-    padding: 4px 8px; /* um pequeno espaço interno opcional */
-    border-radius: 4px; /* cantos levemente arredondados se quiser */
-    transition: color 0.3s, transform 0.2s;
-}
-
-/* Ao passar o mouse, aumenta o destaque */
-nav ul li a:hover {
-    color: #b0896f; /* dourado mais escuro */
-    transform: scale(1.05); /* leve efeito de zoom */
-    background: none; /* sem fundo extra, apenas destaca o texto */
-}
-
-/* Fundo bege apenas atrás dos textos do menu */
-nav ul li a {
-    background-color: #f5ede6; /* bege suave combinando com o site */
-    color: #000000; /* letras pretas */
-    font-weight: 700;
-    text-decoration: none;
-    padding: 8px 16px; /* espaço interno no bloco */
-    border-radius: 8px; /* cantos arredondados */
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-/* Hover com leve destaque */
-nav ul li a:hover {
-    background-color: #e8ded3; /* bege mais escuro ao passar o mouse */
-    transform: scale(1.05); /* leve zoom */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .menu-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .vitrine {
+        grid-template-columns: 1fr;
+    }
 }

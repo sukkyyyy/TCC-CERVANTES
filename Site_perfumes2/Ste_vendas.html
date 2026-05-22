@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,14 +15,16 @@
             <div class="logo">
                 <img src="Logo.jpeg" alt="Logo Divine Cherie" class="logo-img">
                 <span>Divine Cherie</span>
-                <icon></icon>
             </div>
-            <ul>
-                <li><a href="feminina.png" class="item-feminino">Feminino</a></li>
-                <li><a href="masculino.png" class="item-masculino">Masculino</a></li>
-                <li><a href="oferta.png" class="item-ofertas">Ofertas</a></li>
-            </ul>
             
+            <div class="menu-container">
+                <ul>
+                    <li><a href="#" onclick="alert('Página em desenvolvimento'); return false;">Feminino</a></li>
+                    <li><a href="#" onclick="alert('Página em desenvolvimento'); return false;">Masculino</a></li>
+                    <li><a href="#" onclick="alert('Página em desenvolvimento'); return false;">Ofertas</a></li>
+                </ul>
+                <img src="carrinho.jpg" alt="Status" class="img-desenvolvimento" onclick="alert('Estamos em desenvolvimento');">
+            </div>
         </nav>
     </header>
 
@@ -30,11 +33,11 @@
         
         <div class="vitrine">
             <div class="card-produto">
-                <img src="Midnight Rose.jpg.jpeg" alt="Perfume Luxo">
-                <h3>Midnight Rose</h3>
+                <img src="Noir eclipse.png" alt="Perfume Luxo" style="transform: scale(1.15); object-fit: contain;">
+                <h3>Noir Eclipse</h3>
                 <p class="descricao">Notas florais e toque de baunilha.</p>
                 <span class="preco">R$ 349,90</span>
-                <button class="btn-comprar">Comprar Agora</button>
+                <button class="btn-comprar" onclick="alert('O perfume Noir Eclipse estará disponível para compra em breve!');">Comprar Agora</button>
             </div>
 
             <div class="card-produto">
@@ -42,40 +45,68 @@
                 <h3>Ocean Mist</h3>
                 <p class="descricao">Refrescância cítrica e amadeirada.</p>
                 <span class="preco">R$ 289,00</span>
-                <button class="btn-comprar">Comprar Agora</button>
+                <button class="btn-comprar" onclick="alert('O perfume Ocean Mist estará disponível para compra em breve!');">Comprar Agora</button>
             </div>
 
             <div class="card-produto">
                 <img src="Divine Gold.jpg.jpeg" alt="Divine Gold">
-                <h3>Ocean Mist</h3>
+                <h3>Divine Gold</h3>
                 <p class="descricao">Notas marcantes de jasmim e baunilha dourada.</p>
                 <span class="preco">R$ 329,90</span>
-                <button class="btn-comprar">Comprar Agora</button>
+                <button class="btn-comprar" onclick="alert('O perfume Divine Gold estará disponível para compra em breve!');">Comprar Agora</button>
             </div>
 
             <div class="card-produto">
                 <img src="Urban Fresh.jpg.jpeg" alt="Urban Fresh">
-                <h3>Ocean Mist</h3>
+                <h3>Urban Fresh</h3>
                 <p class="descricao">Acordes aromáticos de menta e cedro moderno.</p>
                 <span class="preco">R$ 269,00</span>
-                <button class="btn-comprar">Comprar Agora</button>
+                <button class="btn-comprar" onclick="alert('O perfume Urban Fresh estará disponível para compra em breve!');">Comprar Agora</button>
             </div>
         </div>
     </main>
 
     <footer class="rodape-site">
         <div class="frase-motivacional">
-            <p style="text-align: center;">Onde a elegancia encontra o inesquecivel.</p>
+            <p style="text-align: center; font-style: italic; margin-bottom: 20px;">Onde a elegância encontra o inesquecível.</p>
         </div>
         
         <div class="suporte-whatsapp">
             <p>Precisa de ajuda para escolher?</p>
-            <!-- ✍️ Altere o link abaixo para o seu número real -->
-            <a href="https://wa.me5511945747137" target="_blank" class="btn-whatsapp">
+            <a href="https://wa.me/5511945747137" target="_blank" class="btn-whatsapp">
                 Fale Conosco no WhatsApp
             </a>
         </div>
+
+        <div class="informacoes-empresa" style="text-align: center; margin-top: 30px; font-size: 0.85rem; color: #4b3f36; line-height: 1.6;">
+            <p><strong>Divine Cherie</strong></p>
+            <p>CNPJ: 23.435.334/0001-55</p>
+            <p>Endereço: Rua Oscar Freire, 935 – Jardim Paulista, São Paulo - SP</p>
+            <p style="margin-top: 5px; opacity: 0.8;">Representante Legal: Maria Eduarda Mian</p>
+        </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const imagens = document.querySelectorAll('img');
+            imagens.forEach(img => {
+                const srcAtual = img.getAttribute('src');
+                if (srcAtual && !srcAtual.startsWith('imagens/') && !srcAtual.startsWith('http')) {
+                    img.setAttribute('src', 'imagens/' + srcAtual);
+                }
+            });
+            
+            const favicon = document.querySelector("link[rel*='icon']");
+            if (favicon) {
+                const favSrc = favicon.getAttribute('href');
+                if (favSrc && !favSrc.startsWith('imagens/')) {
+                    favicon.setAttribute('href', 'imagens/' + favSrc);
+                }
+            }
+        });
+    </script>
     
 </body>
 </html>
+
+```
