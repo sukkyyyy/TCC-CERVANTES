@@ -1,11 +1,4 @@
-Aqui está o código completo do seu arquivo **`st_css.css`** com a cor do bloco do WhatsApp alterada.
 
-Para combinar perfeitamente com a identidade visual da *Divine Cherie*, mudei o fundo do card para um **bege mais escuro** (usando o tom `#e8ded3`, que já está presente no efeito de passar o mouse nos botões do menu). Também aproveitei para ajustar a cor do texto do parágrafo interno para garantir um bom contraste e leitura.
-
-Substitua todo o conteúdo do seu arquivo **`st_css.css`** por este:
-
-```css
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -14,15 +7,15 @@ Substitua todo o conteúdo do seu arquivo **`st_css.css`** por este:
 }
 
 body {
-    background-color: #f5ede6; /* bege claro da logo */
-    color: #4b3f36; /* marrom escuro para textos */
+    background-color: #f5ede6;
+    color: #4b3f36; 
 }
 
-/* Header */
+
 header {
-    background-color: #ffffff; /* branco elegante */
+    background-color: #ffffff; 
     padding: 10px 5%;
-    border-bottom: 2px solid #c59f77; /* linha dourada */
+    border-bottom: 2px solid #c59f77; 
 }
 
 nav {
@@ -54,7 +47,6 @@ nav {
     transform: scale(1.05);
 }
 
-/* Container do Menu (Alinha botões + imagem) */
 .menu-container {
     display: flex;
     align-items: center;
@@ -67,7 +59,6 @@ nav ul {
     gap: 20px;
 }
 
-/* Fundo bege atrás dos textos do menu */
 nav ul li a {
     background-color: #f5ede6;
     color: #000000;
@@ -87,11 +78,10 @@ nav ul li a:hover {
     color: #b0896f;
 }
 
-/* Estilização da nova imagem de status */
 .img-desenvolvimento {
     height: 40px;
-    width: 40px;                 /* Fixa a largura para não ficar gigante */
-    object-fit: contain;         /* Garante que a imagem se ajuste perfeitamente ao quadrado */
+    width: 40px;                
+    object-fit: contain;      
     cursor: pointer;
     transition: transform 0.2s ease;
 }
@@ -100,7 +90,6 @@ nav ul li a:hover {
     transform: scale(1.08);
 }
 
-/* Vitrine de produtos */
 .container {
     max-width: 1200px;
     margin: 40px auto;
@@ -122,7 +111,6 @@ nav ul li a:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: transform 0.3s, box-shadow 0.3s;
     
-    /* ALINHAMENTO DO CARD: Centraliza e distribui os elementos igualmente */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -136,11 +124,11 @@ nav ul li a:hover {
 
 .card-produto img {
     width: 100%;
-    height: 250px;           /* Mantém a altura elegante padrão */
-    object-fit: contain;     /* Garante que os frascos fiquem inteiros */
+    height: 250px;          
+    object-fit: contain;  
     border-radius: 8px;
     margin-bottom: 10px;
-    transition: transform 0.3s ease; /* Transição suave para o ajuste */
+    transition: transform 0.3s ease; 
 }
 
 .card-produto h3 {
@@ -178,7 +166,6 @@ nav ul li a:hover {
     background-color: #b0896f;
 }
 
-/* WhatsApp */
 .rodape-site {
     margin-top: 40px;
     padding-bottom: 40px;
@@ -187,7 +174,7 @@ nav ul li a:hover {
 .suporte-whatsapp {
     text-align: center;
     padding: 20px;
-    background-color: #e8ded3;   /* 🛠️ ALTERADO: Bege mais escuro elegante */
+    background-color: #e8ded3;   
     border-radius: 12px;
     margin: 20px auto;
     max-width: 400px;
@@ -197,7 +184,7 @@ nav ul li a:hover {
 .suporte-whatsapp p {
     margin-bottom: 15px;
     font-weight: 600;
-    color: #4b3f36;              /* Mantém o texto bem legível sobre o fundo bege */
+    color: #4b3f36;         
 }
 
 .btn-whatsapp {
@@ -219,7 +206,6 @@ nav ul li a:hover {
     color: #ffffff;
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 768px) {
     .logo-img {
         height: 45px;
