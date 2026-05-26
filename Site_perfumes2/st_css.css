@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +9,6 @@ body {
     background-color: #f5ede6;
     color: #4b3f36; 
 }
-
 
 header {
     background-color: #ffffff; 
@@ -224,5 +222,97 @@ nav ul li a:hover {
     }
     .vitrine {
         grid-template-columns: 1fr;
+    }
+}
+
+a.btn-comprar {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.2;
+}
+
+/* Estrutura lado a lado da página de produto */
+.pagina-produto-container {
+    display: flex;
+    gap: 50px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-top: 20px;
+    align-items: center;
+}
+
+.produto-col-esquerda {
+    flex: 1;
+    text-align: center;
+}
+
+.produto-col-esquerda img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.produto-col-esquerda img:hover {
+    transform: scale(1.03);
+}
+
+.produto-col-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-botoes-vendas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.btn-venda-fake {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.btn-add-carrinho {
+    background-color: transparent;
+    border: 2px solid #c59f77;
+    color: #c59f77;
+}
+
+.btn-add-carrinho:hover {
+    background-color: #f5ede6;
+}
+
+.btn-comprar-agora {
+    background-color: #c59f77;
+    color: #ffffff;
+}
+
+.btn-comprar-agora:hover {
+    background-color: #b0896f;
+}
+
+/* Ajuste para telas de celulares */
+@media (max-width: 768px) {
+    .pagina-produto-container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+    .grupo-botoes-vendas {
+        max-width: 100%;
     }
 }
