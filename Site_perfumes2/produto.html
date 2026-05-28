@@ -5,19 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Produto - Divine Cherie</title>
     <link rel="stylesheet" href="st_css.css">
-    <link rel="icon" href="Logo.jpeg" type="image/x-icon">
+    <link rel="icon" href="imagens/Logo.jpeg" type="image/x-icon">
+    <style>
+
+        .pagina-produto-container {
+            display: flex;
+            align-items: center; 
+            justify-content: space-between;
+            gap: 40px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 30px;
+            margin-top: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        .produto-col-esquerda {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .produto-col-esquerda img {
+            max-width: 320px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 20px;
+        }
+
+        .produto-col-direita {
+            flex: 1.2; 
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .grupo-botoes-vendas {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .btn-venda-fake {
+            width: 100%;
+            max-width: 350px;
+            border: none;
+            border-radius: 15px;
+            padding: 18px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .btn-add-carrinho {
+            background: #fff;
+            border: 2px solid var(--gold);
+            color: var(--gold-dark);
+        }
+
+        .btn-comprar-agora {
+            background: linear-gradient(135deg, #c89a72, #a97850);
+            color: white;
+        }
+
+        .btn-venda-fake:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .pagina-produto-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .produto-col-direita {
+                text-align: center;
+            }
+            .btn-venda-fake {
+                margin: auto;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav>
             <div class="logo" style="cursor: pointer;" onclick="window.location.href='Ste_vendas.html'">
-                <img src="Logo.jpeg" alt="Logo Divine Cherie" class="logo-img">
+                <img src="imagens/Logo.jpeg" alt="Logo Divine Cherie" class="logo-img">
                 <span>Divine Cherie</span>
             </div>
             <div class="menu-container">
                 <ul>
-                    <li><a href="Ste_vendas.html">Voltar para a Vitrine</a></li>
+                    <li><a href="Ste_vendas.html" style="text-decoration: none; font-weight: 600; color: var(--gold-dark);">Voltar para a Vitrine</a></li>
                 </ul>
             </div>
         </nav>
@@ -25,30 +109,41 @@
 
     <main class="container">
         <div class="pagina-produto-container">
+            
             <div class="produto-col-esquerda">
-                <img id="detalheImg" src="" alt="Imagem Grande do Perfume">
+                <img id="detalheImg" src="" alt="Produto">
             </div>
+
             <div class="produto-col-direita">
-                <h1 id="detalheNome" style="color: #c59f77; margin-bottom: 15px; text-align: left;">Nome do Produto</h1>
-                <p id="detalheDescricao" class="descricao" style="text-align: left; font-size: 1.1rem; margin-bottom: 20px;">Descrição completa aqui.</p>
-                <span id="detalhePreco" class="preco" style="text-align: left; font-size: 1.8rem; margin-bottom: 30px;">R$ 0,00</span>
+                <h1 id="detalheNome" style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--gold-dark); margin-bottom: 10px;">Nome do Perfume</h1>
+                
+                <p id="detalheDescricao" style="font-size: 1.1rem; color: #666; line-height: 1.6; margin-bottom: 20px;">
+                    Carregando descrição...
+                </p>
+                
+                <span id="detalhePreco" style="font-size: 2.2rem; font-weight: 700; color: var(--brown); margin-bottom: 25px; font-family: 'Cormorant Garamond', serif;">
+                    R$ 0,00
+                </span>
                 
                 <div class="grupo-botoes-vendas">
-                    <button class="btn-venda-fake btn-add-carrinho" onclick="alert('Esta função estará disponível em breve!');">Colocar no Carrinho</button>
-                    <button class="btn-venda-fake btn-comprar-agora" onclick="alert('Para concluir a sua compra, você será redirecionado para o nosso WhatsApp suporte.'); window.open('https://wa.me/5511945747137', '_blank');">Comprar Agora</button>
+                    <button class="btn-venda-fake btn-add-carrinho" onclick="alert('Adicionado ao carrinho com sucesso!');">Adicionar ao Carrinho</button>
+                    <button class="btn-venda-fake btn-comprar-agora" onclick="window.open('https://wa.me/5511945747137', '_blank');">Comprar Agora</button>
                 </div>
             </div>
+
         </div>
     </main>
 
     <footer class="rodape-site">
-        <div class="frase-motivacional">
-            <p style="text-align: center; font-style: italic; margin-bottom: 20px;">Onde a elegância encontra o inesquecível.</p>
+        <div class="frase-motivacional" style="text-align: center; margin-top: 40px;">
+            <p style="font-style: italic; color: var(--text-light); margin-bottom: 20px;">Onde a elegância encontra o inesquecível.</p>
         </div>
+
         <div class="informacoes-empresa" style="text-align: center; margin-top: 30px; font-size: 0.85rem; color: #4b3f36; line-height: 1.6;">
             <p><strong>Divine Cherie</strong></p>
             <p>CNPJ: 23.435.334/0001-55</p>
             <p>Endereço: Rua Oscar Freire, 935 – Jardim Paulista, São Paulo - SP</p>
+            <p style="margin-top: 5px; opacity: 0.8;">Representante Legal: Maria Eduarda Mian</p>
         </div>
     </footer>
 
@@ -65,13 +160,8 @@
             if (desc) document.getElementById('detalheDescricao').innerText = desc;
             
             if (img) {
-                const finalSrc = img.startsWith('imagens/') ? img : 'imagens/' + img;
+                const finalSrc = img.includes('imagens/') ? img : 'imagens/' + img;
                 document.getElementById('detalheImg').setAttribute('src', finalSrc);
-            }
-
-            const logoImg = document.querySelector('.logo-img');
-            if (logoImg && !logoImg.getAttribute('src').startsWith('imagens/')) {
-                logoImg.setAttribute('src', 'imagens/' + logoImg.getAttribute('src'));
             }
         });
     </script>
