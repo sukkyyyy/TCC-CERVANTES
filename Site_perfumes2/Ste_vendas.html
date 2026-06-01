@@ -21,8 +21,8 @@
                     <li><a href="#" onclick="alert('Página em desenvolvimento'); return false;">Feminino</a></li>
                     <li><a href="#" onclick="alert('Página em desenvolvimento'); return false;">Masculino</a></li>
                     <li><a href="#" onclick="alert('Página em desenvolvimento'); return false;">Ofertas</a></li>
+                    <li><a href="carrinho.html" class="btn-carrinho-texto">Seu Carrinho</a></li>
                 </ul>
-                <img src="carrinho.jpg" alt="Status" class="img-desenvolvimento" onclick="alert('Estamos em desenvolvimento');">
             </div>
         </nav>
     </header>
@@ -52,43 +52,43 @@
             <div class="vitrine-wrapper">
                 <div class="vitrine" id="vitrine">
                     <div class="card-produto">
-                        <a href="produto.html?nome=Noir Eclipse&preco=R$ 349,90&img=Noir eclipse.png&desc=Notas florais e toque de baunilha marcante.">
-                            <img src="Noir eclipse.png" alt="Perfume Luxo" style="transform: scale(1.15); object-fit: contain;">
+                        <a href="produto.html?nome=Noir Eclipse&preco=R$ 349,90&img=noir%20eclipse.png&desc=Notas florais e toque de baunilha marcante.">
+                            <img src="noir eclipse.png" alt="Perfume Luxo" style="transform: scale(1.15); object-fit: contain;">
                         </a>
                         <h3>Noir Eclipse</h3>
                         <p class="descricao">Notas florais e toque de baunilha.</p>
                         <span class="preco">R$ 349,90</span>
-                        <button class="btn-comprar" onclick="alert('Para concluir a sua compra, você será redirecionado para o nosso WhatsApp suporte.'); window.open('https://wa.me/5511945747137', '_blank');">Comprar Agora</button>
+                        <a href="carrinho.html?produto=Noir%20Eclipse&preco=349,90&img=noir%20eclipse.png" class="btn-comprar" style="display: block; text-decoration: none; text-align: center;">Comprar Agora</a>
                     </div>
 
                     <div class="card-produto">
-                        <a href="produto.html?nome=Ocean Mist&preco=R$ 289,00&img=Ocean Mist.jpg.jpeg&desc=Refrescância cítrica e amadeirada para o dia a dia.">
+                        <a href="produto.html?nome=Ocean Mist&preco=R$ 289,00&img=Ocean%20Mist.jpg.jpeg&desc=Refrescância cítrica e amadeirada para o dia a dia.">
                             <img src="Ocean Mist.jpg.jpeg" alt="Perfume Fresh">
                         </a>
                         <h3>Ocean Mist</h3>
                         <p class="descricao">Refrescância cítrica e amadeirada.</p>
                         <span class="preco">R$ 289,00</span>
-                        <button class="btn-comprar" onclick="alert('Para concluir a sua compra, você será redirecionado para o nosso WhatsApp suporte.'); window.open('https://wa.me/5511945747137', '_blank');">Comprar Agora</button>
+                        <a href="carrinho.html?produto=Ocean%20Mist&preco=289,00&img=Ocean%20Mist.jpg.jpeg" class="btn-comprar" style="display: block; text-decoration: none; text-align: center;">Comprar Agora</a>
                     </div>
 
                     <div class="card-produto">
-                        <a href="produto.html?nome=Divine Gold&preco=R$ 329,90&img=Divine Gold.jpg.jpeg&desc=Notas marcantes de jasmim e baunilha dourada luxuosa.">
+                        <a href="produto.html?nome=Divine Gold&preco=R$ 329,90&img=Divine%20Gold.jpg.jpeg&desc=Notas marcantes de jasmim e baunilha dourada luxuosa.">
                             <img src="Divine Gold.jpg.jpeg" alt="Divine Gold">
                         </a>
                         <h3>Divine Gold</h3>
                         <p class="descricao">Notas marcantes de jasmim e baunilha dourada.</p>
                         <span class="preco">R$ 329,90</span>
-                        <button class="btn-comprar" onclick="alert('Para concluir a sua compra, você será redirecionado para o nosso WhatsApp suporte.'); window.open('https://wa.me/5511945747137', '_blank');">Comprar Agora</button>
+                        <a href="carrinho.html?produto=Divine%20Gold&preco=329,90&img=Divine%20Gold.jpg.jpeg" class="btn-comprar" style="display: block; text-decoration: none; text-align: center;">Comprar Agora</a>
                     </div>
 
                     <div class="card-produto">
-                        <a href="produto.html?nome=Urban Fresh&preco=R$ 269,00&img=Urban Fresh.jpg.jpeg&desc=Acordes aromáticos de menta e cedro moderno urbano.">
+                        <a href="produto.html?nome=Urban Fresh&preco=R$ 269,00&img=Urban%20Fresh.jpg.jpeg&desc=Acordes aromáticos de menta e cedro moderno urbano.">
                             <img src="Urban Fresh.jpg.jpeg" alt="Urban Fresh">
                         </a>
                         <h3>Urban Fresh</h3>
                         <p class="descricao">Acordes aromáticos de menta e cedro moderno.</p>
                         <span class="preco">R$ 269,00</span>
-                        <button class="btn-comprar" onclick="alert('Para concluir a sua compra, você será redirecionado para o nosso WhatsApp suporte.'); window.open('https://wa.me/5511945747137', '_blank');">Comprar Agora</button>
+                        <a href="carrinho.html?produto=Urban%20Fresh&preco=269,00&img=Urban%20Fresh.jpg.jpeg" class="btn-comprar" style="display: block; text-decoration: none; text-align: center;">Comprar Agora</a>
                     </div>
                 </div>
             </div>
@@ -133,7 +133,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", function() {
-            const imagens = document.querySelectorAll('.vitrine img, .logo-img, .img-desenvolvimento');
+            const imagens = document.querySelectorAll('.vitrine img, .logo-img');
             imagens.forEach(img => {
                 const srcAtual = img.getAttribute('src');
                 if (srcAtual && !srcAtual.startsWith('imagens/') && !srcAtual.startsWith('http')) {

@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bg: #f7efe7;
-    --bg-soft: #fffaf7;
-    --white: #ffffff;
-    --gold: #c89a72;
-    --gold-dark: #a97850;
-    --brown: #5e4c42;
-    --text-light: #8a7668;
-    --shadow: 0 10px 30px rgba(169,120,80,0.10);
-    --shadow-hover: 0 18px 40px rgba(169,120,80,0.16);
+    --bg: #ebdccf;
+    --bg-soft: #f4eae1;
+    --white: #fdfaf7;
+    --gold: #b08259;
+    --gold-dark: #8c5e38;
+    --brown: #3d312a;
+    --text-light: #5a4b40;
+    --shadow: 0 10px 30px rgba(140, 94, 56, 0.12);
+    --shadow-hover: 0 18px 40px rgba(140, 94, 56, 0.18);
     --radius: 24px;
     --transition: all 0.35s ease;
 }
@@ -25,10 +25,7 @@ html {
 }
 
 body {
-    background:
-        radial-gradient(circle at top left, rgba(200,154,114,0.08), transparent 22%),
-        radial-gradient(circle at bottom right, rgba(200,154,114,0.06), transparent 20%),
-        linear-gradient(to bottom, #fffaf7, #f7efe7);
+    background: linear-gradient(to bottom, var(--bg-soft), var(--bg));
     color: var(--brown);
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
@@ -38,9 +35,10 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255,250,247,0.75);
+    background: #ebdccf;
     backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(200,154,114,0.15);
+    border-bottom: 1px solid rgba(140, 94, 56, 0.15);
+    box-shadow: 0 4px 20px rgba(140, 94, 56, 0.08);
 }
 
 nav {
@@ -72,7 +70,6 @@ nav {
     height: 65px;
     border-radius: 18px;
     object-fit: cover;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     transition: var(--transition);
 }
 
@@ -90,6 +87,7 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 14px;
+    align-items: center;
 }
 
 nav ul li a {
@@ -105,14 +103,13 @@ nav ul li a:hover {
     background: linear-gradient(135deg, var(--gold), var(--gold-dark));
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(197,159,119,0.35);
+    box-shadow: 0 10px 25px rgba(140, 94, 56, 0.25);
 }
 
-.img-desenvolvimento {
-    width: 44px;
-    height: 44px;
-    object-fit: contain;
-    transition: var(--transition);
+.btn-carrinho-texto {
+    font-weight: 700;
+    color: var(--gold-dark);
+    border: 1px solid rgba(140, 94, 56, 0.3);
 }
 
 .container {
@@ -122,36 +119,58 @@ nav ul li a:hover {
 }
 
 .hero {
-    background: linear-gradient(135deg, #fffaf7, #f7efe7);
+    background: rgba(253, 250, 247, 0.45);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(140, 94, 56, 0.08);
     min-height: 260px;
     border-radius: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px;
+    padding: 50px 40px;
     margin-bottom: 60px;
     box-shadow: var(--shadow);
 }
 
 .hero-content h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 4.5rem;
+    font-size: 4.8rem;
+    font-weight: 600;
     color: var(--gold-dark);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    letter-spacing: 4px;
+    line-height: 1.2;
 }
 
 .hero-content p {
     color: var(--text-light);
-    font-size: 1.15rem;
-    max-width: 700px;
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 780px;
     margin: auto;
-    line-height: 1.8;
+    line-height: 2;
+    letter-spacing: 0.5px;
 }
 
 .titulo-secao {
     text-align: center;
     margin-bottom: 40px;
+}
+
+.titulo-secao h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.titulo-secao p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
 }
 
 .destaque-titulo {
@@ -191,15 +210,20 @@ nav ul li a:hover {
 .card-produto {
     min-width: 300px;
     flex: 0 0 auto;
-    background: rgba(255,255,255,0.72);
+    background: var(--white);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(200,154,114,0.12);
+    border: 1px solid rgba(140, 94, 56, 0.12);
     border-radius: 30px;
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
     text-align: center;
     padding-bottom: 24px;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
 .card-produto img {
@@ -213,6 +237,7 @@ nav ul li a:hover {
 .card-produto h3 {
     font-size: 1.4rem;
     margin-bottom: 8px;
+    color: var(--brown);
 }
 
 .descricao {
@@ -243,6 +268,7 @@ nav ul li a:hover {
     z-index: 10;
     transition: var(--transition);
     flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .arrow-btn:hover {
@@ -251,21 +277,25 @@ nav ul li a:hover {
 }
 
 .btn-comprar {
+    display: block;
     width: 85%;
+    margin: 0 auto;
     border: none;
     border-radius: 18px;
     padding: 16px;
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
-    background: linear-gradient(135deg, #c89a72, #a97850);
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
     color: white;
     transition: var(--transition);
+    text-decoration: none;
+    text-align: center;
 }
 
 .btn-comprar:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(169,120,80,0.30);
+    box-shadow: 0 12px 25px rgba(140, 94, 56, 0.25);
 }
 
 .whatsapp-popup {
@@ -279,14 +309,14 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     z-index: 9999;
     transition: all 0.3s ease;
 }
 
 .whatsapp-popup:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
 }
 
 .whatsapp-popup img {
@@ -296,6 +326,7 @@ nav ul li a:hover {
 
 @media (max-width: 992px) {
     .card-produto { min-width: 260px; }
-    .hero-content h1 { font-size: 3rem; }
+    .hero-content h1 { font-size: 3.2rem; }
+    .hero-content p { font-size: 1.1rem; }
     .destaque-titulo { font-size: 2.2rem; }
 }
