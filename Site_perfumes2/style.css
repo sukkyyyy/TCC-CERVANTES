@@ -119,9 +119,8 @@ nav ul li a:hover {
 }
 
 .hero {
-    background: rgba(253, 250, 247, 0.45);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(140, 94, 56, 0.08);
+    background: transparent;
+    border: 3px solid var(--gold-dark);
     min-height: 260px;
     border-radius: 32px;
     display: flex;
@@ -151,6 +150,143 @@ nav ul li a:hover {
     margin: auto;
     line-height: 2;
     letter-spacing: 0.5px;
+}
+
+.super-destaque-container {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.super-destaque-banner {
+    display: flex;
+    background: transparent;
+    border-radius: 32px;
+    overflow: hidden;
+    padding: 0;
+    gap: 40px;
+}
+
+/* Alterações aplicadas aqui para deixar a imagem maior e a borda dourada e fina */
+.super-destaque-imagem {
+    flex: 1.2; /* Aumentado de 1 para 1.2 para dar mais destaque e espaço para a imagem */
+    min-height: 520px; /* Aumentado o tamanho vertical do bloco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px; /* Reduzido o padding interno para expandir a imagem */
+    border: 1.5px solid var(--gold-dark); /* Borda fina e em dourado escuro */
+    border-radius: 24px;
+    background: transparent;
+}
+
+.super-destaque-imagem img {
+    width: 100%;
+    height: 100%;
+    max-height: 490px; /* Permitindo que a imagem ocupe mais espaço vertical */
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.super-destaque-banner:hover .super-destaque-imagem img {
+    transform: scale(1.03);
+}
+
+.super-destaque-info {
+    flex: 1;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.tag-exclusivo {
+    display: inline-block;
+    background: rgba(176, 130, 89, 0.15);
+    color: var(--gold-dark);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+}
+
+.super-destaque-info h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.subtitulo-premium {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--gold);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.descricao-longa {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+.caracteristicas-mini {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.caracteristicas-mini span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: var(--bg-soft);
+    color: var(--brown);
+    padding: 8px 14px;
+    border-radius: 12px;
+}
+
+.preco-comprar-bloco {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.preco-destaque {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--gold-dark);
+}
+
+.btn-comprar-premium {
+    flex: 1;
+    max-width: 260px;
+    border: none;
+    border-radius: 18px;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: white;
+    transition: var(--transition);
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(140, 94, 56, 0.15);
+}
+
+.btn-comprar-premium:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(140, 94, 56, 0.25);
 }
 
 .titulo-secao {
@@ -245,6 +381,10 @@ nav ul li a:hover {
     color: var(--text-light);
     padding: 0 15px;
     margin-bottom: 15px;
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .preco {
@@ -325,8 +465,38 @@ nav ul li a:hover {
 }
 
 @media (max-width: 992px) {
-    .card-produto { min-width: 260px; }
-    .hero-content h1 { font-size: 3.2rem; }
-    .hero-content p { font-size: 1.1rem; }
-    .destaque-titulo { font-size: 2.2rem; }
+    .super-destaque-banner {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .super-destaque-imagem {
+        min-height: 300px;
+    }
+    .super-destaque-info {
+        padding: 10px;
+    }
+    .super-destaque-info h2 {
+        font-size: 2.4rem;
+    }
+    .preco-comprar-bloco {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .btn-comprar-premium {
+        max-width: 100%;
+        width: 100%;
+    }
+    .card-produto { 
+        min-width: 260px; 
+    }
+    .hero-content h1 { 
+        font-size: 3.2rem; 
+    }
+    .hero-content p { 
+        font-size: 1.1rem; 
+    }
+    .destaque-titulo { 
+        font-size: 2.2rem; 
+    }
 }
