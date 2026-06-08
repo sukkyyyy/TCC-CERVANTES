@@ -3,299 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divine Cherie</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="Logo.jpeg" type="image/x-icon">
+    <title>Divine Cherie - Alta Perfumaria</title>
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="icon" href="Imagens/Logo.jpeg" type="image/x-icon">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo">
-                <img src="Logo.jpeg" alt="Logo Divine Cherie" class="logo-img">
+            <div class="logo" onclick="window.location.href='index.html'" style="cursor: pointer;">
+                <img src="Imagens/Logo.jpeg" alt="Logo Divine Cherie" class="logo-img">
                 <span>Divine Cherie</span>
             </div>
-            
             <div class="menu-container">
                 <ul>
-                    <li><a href="#feminino">Feminino</a></li>
-                    <li><a href="#masculino">Masculino</a></li>
-                    <li><a href="carrinho.html" class="btn-carrinho-texto">Seu Carrinho</a></li>
+                    <li><button class="btn-menu-nav" onclick="rolarParaSecao('feminino')">Feminino</button></li>
+                    <li><button class="btn-menu-nav" onclick="rolarParaSecao('masculino')">Masculino</button></li>
+                    <li><button class="btn-carrinho-texto" onclick="window.location.href='carrinho.html'">Seu Carrinho</button></li>
                 </ul>
             </div>
         </nav>
     </header>
 
     <main class="container">
-
         <section class="hero">
             <div class="hero-content">
-                <h1>Luxo em cada fragrância</h1>
-                <p>
-                    Descubra perfumes exclusivos criados para transformar presença em elegância.
-                    Sofisticação, intensidade e personalidade em cada detalhe.
-                </p>
+                <h1>Divine Cherie</h1>
+                <p>Descubra perfumes exclusivos criados para transformar presença em elegância. Sofisticação, intensidade e personalidade em cada detalhe.</p>
             </div>
         </section>
 
-        <section class="super-destaque-container">
-            <div class="super-destaque-banner">
-                <div class="super-destaque-imagem">
-                    <img src="cherie.jpeg" alt="Perfume Cherie - Doçura que fica">
-                </div>
-                <div class="super-destaque-info">
-                    <span class="tag-exclusivo">Fragrância Assinatura</span>
-                    <h2>Cherie Eau de Parfum</h2>
-                    <p class="subtitulo-premium">Simples. Doce. Inesquecível.</p>
-                    <p class="descricao-longa">
-                        Um perfume inspirado na suavidade e no envolvente calor da vanilla. Doce na medida certa, aconchegante, feminino e marcante. Feito sob medida para quem deseja deixar sua essência e presença por onde passa, durando o dia todo.
-                    </p>
-                    <div class="caracteristicas-mini">
-                        <span>✨ Inspirado na Vanilla</span>
-                        <span>❤️ Feminino & Sofisticado</span>
-                        <span>⏳ Fixação Prolongada</span>
-                    </div>
-                    <div class="preco-comprar-bloco">
-                        <span class="preco-destaque">R$ 549,90</span>
-                        <a href="carrinho.html?produto=Cherie&preco=549,90&img=cherie.jpeg" class="btn-comprar-premium">Adquirir Essência</a>
+        <section class="super-destaque-container" id="container-assinatura">
+        </section>
+
+        <section class="secao-produtos" id="feminino">
+            <div class="titulo-secao">
+                <h2>Coleção Feminina</h2>
+                <p>Fragrâncias delicadas, marcantes e sofisticadas</p>
+            </div>
+            
+            <div class="carousel-container">
+                <button class="arrow-btn prev" onclick="scrollCarrossel('vitrine-feminina', -1)">&#10094;</button>
+                <div class="vitrine-wrapper">
+                    <div class="vitrine" id="vitrine-feminina">
                     </div>
                 </div>
+                <button class="arrow-btn next" onclick="scrollCarrossel('vitrine-feminina', 1)">&#10095;</button>
             </div>
         </section>
-        
-        <div class="titulo-secao">
-            <h2>Nossas Fragrâncias</h2>
-            <p>Seleção premium inspirada na elegância e no luxo moderno.</p>
-        </div>
 
-        <h2 class="destaque-titulo">Mais Destaques</h2>
-        
-        <div class="carousel-container">
-            <button class="arrow-btn left" onclick="moveSlide(-1, 'vitrine-destaque')">&#10094;</button>
-            <div class="vitrine-wrapper">
-                <div class="vitrine" id="vitrine-destaque">
-                    <div class="card-produto">
-                        <img src="noir eclipse.png" alt="Noir Eclipse">
-                        <h3>Noir Eclipse</h3>
-                        <p class="descricao">Misterioso, elegante e extremamente marcante.</p>
-                        <span class="preco">R$ 199,90</span>
-                        <a href="carrinho.html?produto=Noir%20Eclipse&preco=199,90&img=noir%20eclipse.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="cherie.jpeg" alt="Cherie">
-                        <h3>Cherie</h3>
-                        <p class="descricao">Doce, feminina e inesquecível. Feita para encantar.</p>
-                        <span class="preco">R$ 549,90</span>
-                        <a href="carrinho.html?produto=Cherie&preco=549,90&img=cherie.jpeg" class="btn-comprar">Comprar Agora</a>
+        <section class="secao-produtos" id="masculino" style="margin-top: 80px;">
+            <div class="titulo-secao">
+                <h2>Coleção Masculina</h2>
+                <p>Fragrâncias intensas, amadeiradas e imponentes</p>
+            </div>
+            
+            <div class="carousel-container">
+                <button class="arrow-btn prev" onclick="scrollCarrossel('vitrine-masculina', -1)">&#10094;</button>
+                <div class="vitrine-wrapper">
+                    <div class="vitrine" id="vitrine-masculina">
                     </div>
                 </div>
+                <button class="arrow-btn next" onclick="scrollCarrossel('vitrine-masculina', 1)">&#10095;</button>
             </div>
-            <button class="arrow-btn right" onclick="moveSlide(1, 'vitrine-destaque')">&#10095;</button>
-        </div>
-
-        <h2 class="destaque-titulo" id="feminino">Feminino</h2>
-        
-        <div class="carousel-container">
-            <button class="arrow-btn left" onclick="moveSlide(-1, 'vitrine-feminino')">&#10094;</button>
-            <div class="vitrine-wrapper">
-                <div class="vitrine" id="vitrine-feminino">
-                    <div class="card-produto">
-                        <img src="Lumiere Blanche.png" alt="Lumière Blanche">
-                        <h3>Lumière Blanche</h3>
-                        <p class="descricao">Uma fragrância delicada e iluminada, perfeita para mulheres elegantes.</p>
-                        <span class="preco">R$ 179,90</span>
-                        <a href="carrinho.html?produto=Lumiere%20Blanche&preco=179,90&img=Lumiere%20Blanche.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Rose Delicate.png" alt="Rose Delicate">
-                        <h3>Rose Delicate</h3>
-                        <p class="descricao">Romântico e elegante, perfeito para quem ama fragrâncias suaves.</p>
-                        <span class="preco">R$ 169,90</span>
-                        <a href="carrinho.html?produto=Rose%20Delicate&preco=169,90&img=Rose%20Delicate.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Vanille Doree.png" alt="Vanille Dorée">
-                        <h3>Vanille Dorée</h3>
-                        <p class="descricao">Doce sofisticado e extremamente viciante, perfeito para noites especiais.</p>
-                        <span class="preco">R$ 184,90</span>
-                        <a href="carrinho.html?produto=Vanille%20Doree&preco=184,90&img=Vanille%20Doree.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Lavanda Serena.png" alt="Lavanda Serena">
-                        <h3>Lavanda Serena</h3>
-                        <p class="descricao">Suave, elegante e relaxante, ideal para o dia a dia.</p>
-                        <span class="preco">R$ 164,90</span>
-                        <a href="carrinho.html?produto=Lavanda%20Serena&preco=164,90&img=Lavanda%20Serena.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Pureza Floral.png" alt="Pureza Floral">
-                        <h3>Pureza Floral</h3>
-                        <p class="descricao">Delicado, confortável e elegante como pele limpa e hidratada.</p>
-                        <span class="preco">R$ 174,90</span>
-                        <a href="carrinho.html?produto=Pureza%20Floral&preco=174,90&img=Pureza%20Floral.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Peche Veloutee.png" alt="Pêche Veloutée">
-                        <h3>Pêche Veloutée</h3>
-                        <p class="descricao">Doce delicado e feminino com toque aveludado irresistível.</p>
-                        <span class="preco">R$ 169,90</span>
-                        <a href="carrinho.html?produto=Peche%20Veloutee&preco=169,90&img=Peche%20Veloutee.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Champagne Eternel.png" alt="Champagne Éternel">
-                        <h3>Champagne Éternel</h3>
-                        <p class="descricao">Luxuoso e brilhante, inspirado em celebrações inesquecíveis.</p>
-                        <span class="preco">R$ 219,90</span>
-                        <a href="carrinho.html?produto=Champagne%20Eternel&preco=219,90&img=Champagne%20Eternel.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Aurora de Venus.png" alt="Aurora de Vênus">
-                        <h3>Aurora de Vênus</h3>
-                        <p class="descricao">Romântico e encantador, inspirado na delicadeza celestial.</p>
-                        <span class="preco">R$ 189,90</span>
-                        <a href="carrinho.html?produto=Aurora%20de%20Venus&preco=189,90&img=Aurora%20de%20Venus.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                </div>
-            </div>
-            <button class="arrow-btn right" onclick="moveSlide(1, 'vitrine-feminino')">&#10095;</button>
-        </div>
-
-        <h2 class="destaque-titulo" id="masculino">Masculino</h2>
-        
-        <div class="carousel-container">
-            <button class="arrow-btn left" onclick="moveSlide(-1, 'vitrine-masculino')">&#10094;</button>
-            <div class="vitrine-wrapper">
-                <div class="vitrine" id="vitrine-masculino">
-                    <div class="card-produto">
-                        <img src="Eclat Noir.png" alt="Éclat Noir">
-                        <h3>Éclat Noir</h3>
-                        <p class="descricao">Sedutor e sofisticado, com presença marcante por onde passa.</p>
-                        <span class="preco">R$ 209,90</span>
-                        <a href="carrinho.html?produto=Eclat%20Noir&preco=209,90&img=Eclat%20Noir.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Azzurro Oceano.png" alt="Azzurro Oceano">
-                        <h3>Azzurro Oceano</h3>
-                        <p class="descricao">Refrescante e moderno, transmits liberdade e sensação de brisa do mar.</p>
-                        <span class="preco">R$ 189,90</span>
-                        <a href="carrinho.html?produto=Azzurro%20Oceano&preco=189,90&img=Azzurro%20Oceano.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Intenso Homme.png" alt="Intenso Homme">
-                        <h3>Intenso Homme</h3>
-                        <p class="descricao">Masculino sofisticado e extremamente marcante para homens confiantes.</p>
-                        <span class="preco">R$ 199,90</span>
-                        <a href="carrinho.html?produto=Intenso%20Homme&preco=199,90&img=Intenso%20Homme.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Forest Verde.png" alt="Forest Verde">
-                        <h3>Forest Verde</h3>
-                        <p class="descricao">Inspirado na natureza luxuosa e na elegância das florestas profundas.</p>
-                        <span class="preco">R$ 194,90</span>
-                        <a href="carrinho.html?produto=Forest%20Verde&preco=194,90&img=Forest%20Verde.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Oud Premier.png" alt="Oud Premier">
-                        <h3>Oud Premier</h3>
-                        <p class="descricao">Luxuoso e exótico, inspirado na perfumaria árabe premium.</p>
-                        <span class="preco">R$ 229,90</span>
-                        <a href="carrinho.html?produto=Oud%20Premier&preco=229,90&img=Oud%20Premier.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Santal Elegance.png" alt="Santal Élégance">
-                        <h3>Santal Élégance</h3>
-                        <p class="descricao">Elegante e refinado, perfeito para quem ama perfumes sofisticados.</p>
-                        <span class="preco">R$ 214,90</span>
-                        <a href="carrinho.html?produto=Santal%20Elegance&preco=214,90&img=Santal%20Elegance.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Bleu Infini.png" alt="Bleu Infini">
-                        <h3>Bleu Infini</h3>
-                        <p class="descricao">Moderno, refrescante e extremamente versátil.</p>
-                        <span class="preco">R$ 189,90</span>
-                        <a href="carrinho.html?produto=Bleu%20Infini&preco=189,90&img=Bleu%20Infini.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Citrus Frais.png" alt="Citrus Frais">
-                        <h3>Citrus Frais</h3>
-                        <p class="descricao">Leve, vibrante e perfeito para dias quentes.</p>
-                        <span class="preco">R$ 159,90</span>
-                        <a href="carrinho.html?produto=Citrus%20Frais&preco=159,90&img=Citrus%20Frais.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Absoluto Noir.png" alt="Absoluto Noir">
-                        <h3>Absoluto Noir</h3>
-                        <p class="descricao">O perfume mais intenso e luxuoso da coleção Divine Cherie.</p>
-                        <span class="preco">R$ 239,90</span>
-                        <a href="carrinho.html?produto=Absoluto%20Noir&preco=239,90&img=Absoluto%20Noir.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                    <div class="card-produto">
-                        <img src="Magnetic Amber.png" alt="Magnétic Amber">
-                        <h3>Magnétic Amber</h3>
-                        <p class="descricao">Sensual e sofisticado, perfeito para noites elegantes.</p>
-                        <span class="preco">R$ 224,90</span>
-                        <a href="carrinho.html?produto=Magnetic%20Amber&preco=224,90&img=Magnetic%20Amber.png" class="btn-comprar">Comprar Agora</a>
-                    </div>
-                </div>
-            </div>
-            <button class="arrow-btn right" onclick="moveSlide(1, 'vitrine-masculino')">&#10095;</button>
-        </div>
+        </section>
     </main>
 
-    <a href="https://wa.me/5511945747137" target="_blank" class="whatsapp-popup">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
-
-    <footer class="rodape-site">
-        <div class="frase-motivacional">
-            <p style="text-align: center; font-style: italic; margin-bottom: 20px;">Onde a elegância encontra o inesquecível.</p>
+    <footer style="margin-top: 100px; padding: 40px 20px; background-color: #f9f6f0; border-top: 1px solid #eaddca; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; text-align: left; gap: 20px;">
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #8c6239; margin-bottom: 15px;">Divine Cherie</h3>
+                <p style="color: #666; font-size: 14px; line-height: 1.6;">Sua marca de alta perfumaria com essências importadas, exclusividade e fixação marcante.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #8c6239; margin-bottom: 15px;">Navegação</h3>
+                <ul style="list-style: none; padding: 0; line-height: 2;">
+                    <li><span onclick="rolarParaSecao('feminino')" style="color: #666; cursor: pointer; font-size: 14px;">Coleção Feminina</span></li>
+                    <li><span onclick="rolarParaSecao('masculino')" style="color: #666; cursor: pointer; font-size: 14px;">Coleção Masculina</span></li>
+                    <li><span onclick="window.location.href='carrinho.html'" style="color: #666; cursor: pointer; font-size: 14px;">Seu Carrinho</span></li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: #8c6239; margin-bottom: 15px;">Contato</h3>
+                <p style="color: #666; font-size: 14px; line-height: 2;">Atendimento: sac@divinecherie.com.br<br>WhatsApp: (00) 00000-0000</p>
+            </div>
         </div>
-        <div class="informacoes-empresa" style="text-align: center; margin-top: 30px; font-size: 0.85rem; color: #4b3f36; line-height: 1.6;">
-            <p><strong>Divine Cherie</strong></p>
-            <p>CNPJ: 23.435.334/0001-55</p>
-            <p>Endereço: Rua Oscar Freire, 935 – Jardim Paulista, São Paulo - SP</p>
-            <p style="margin-top: 5px; opacity: 0.8;">Representante Legal: Maria Eduarda Mian</p>
-        </div>
+        <hr style="border: 0; border-top: 1px solid #eaddca; margin: 30px 0;">
+        <p style="color: #999; font-size: 12px;">&copy; 2026 Divine Cherie - Todos os direitos reservados.</p>
     </footer>
 
+    <a href="https://wa.me/5500000000000" class="whatsapp-popup" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Contato">
+    </a>
+
     <script>
-        const positions = {
-            'vitrine-destaque': 0,
-            'vitrine-feminino': 0,
-            'vitrine-masculino': 0
-        };
+        function carregarProdutosDoBanco() {
+            const produtos = [
+                { nome: "ÉCLAT NOIR", preco: 209.90, familia_olfativa: "Amadeirado Oriental", essencia_principal: "Baunilha Negra • Couro • Patchouli", descricao: "Sedutor e sofisticado, Éclat Noir foi criado para pessoas intensas e elegantes.", imagem: "Imagens/Eclat Noir.png" },
+                { nome: "LUMIÈRE BLANCHE", preco: 179.90, familia_olfativa: "Floral Musk", essencia_principal: "Flores Brancas • Musk • Baunilha Cremosa", descricao: "Uma fragrância delicada e iluminada, perfeita para mulheres elegantes e românticas.", imagem: "Imagens/Lumiere Blanche.png" },
+                { nome: "AZZURRO OCEANO", preco: 189.90, familia_olfativa: "Aquático Aromático", essencia_principal: "Notas Marinhas • Limão Siciliano • Cedro", descricao: "Refrescante e moderno, transmite liberdade e sensação de brisa do mar.", imagem: "Imagens/Azzurro Oceano.png" },
+                { nome: "INTENSO HOMME", preco: 199.90, familia_olfativa: "Amadeirado Especiado", essencia_principal: "Âmbar • Pimenta • Sândalo", descricao: "Masculino sofisticado e extremamente marcante para homens confiantes.", imagem: "Imagens/Intenso Homme.png" },
+                { nome: "ROSE DELICATE", preco: 169.90, familia_olfativa: "Floral Rosado", essencia_principal: "Rosa Chá • Peônia • Musk", descricao: "Romântico e elegante, perfeito para quem ama fragrâncias femininas suaves.", imagem: "Imagens/Rose Delicate.png" },
+                { nome: "VANILLE DORÉE", preco: 184.90, familia_olfativa: "Oriental Gourmand", essencia_principal: "Baunilha Dourada • Caramelo • Âmbar", descricao: "Doce sofisticado e extremamente viciante, perfeito para noites especiais.", imagem: "Imagens/Vanille Doree.png" },
+                { nome: "FOREST VERDE", preco: 194.90, familia_olfativa: "Verde Amadeirado", essencia_principal: "Cedro • Folhas Verdes • Vetiver", descricao: "Inspirado na natureza luxuosa e na elegância das florestas profundas.", imagem: "Imagens/Forest Verde.png" },
+                { nome: "LAVANDA SERENA", preco: 164.90, familia_olfativa: "Aromático Floral", essencia_principal: "Lavanda Francesa • Musk • Íris", descricao: "Suave, elegante e relaxante, ideal para o dia a dia.", imagem: "Imagens/Lavanda Serena.png" },
+                { nome: "OUD PREMIER", preco: 229.90, familia_olfativa: "Oriental Amadeirado", essencia_principal: "Oud Árabe • Incenso • Âmbar", descricao: "Luxuoso e exótico, inspirado na perfumaria árabe premium.", imagem: "Imagens/Oud Premier.png" },
+                { nome: "SANTAL ÉLÉGANCE", preco: 214.90, familia_olfativa: "Amadeirado Cremoso", essencia_principal: "Sândalo • Baunilha • Musk", descricao: "Elegante e refinado, perfeito para quem ama perfumes sofisticados.", imagem: "Imagens/Santal Elegance.png" },
+                { nome: "BLEU INFINI", preco: 189.90, familia_olfativa: "Fresco Amadeirado", essencia_principal: "Notas Oceânicas • Bergamota • Cedro Azul", descricao: "Moderno, refrescante e extremamente versátil.", imagem: "Imagens/Bleu Infini.png" },
+                { nome: "CITRUS FRAIS", preco: 159.90, familia_olfativa: "Cítrico Fresco", essencia_principal: "Laranja Siciliana • Limão • Musk", descricao: "Leve, vibrante e perfeito para dias quentes.", imagem: "Imagens/Citrus Frais.png" },
+                { nome: "PUREZA FLORAL", preco: 174.90, familia_olfativa: "Floral Limpo", essencia_principal: "Lírio Branco • Jasmim • Musk", descricao: "Delicado, confortável e elegante como pele limpa e hidratada.", imagem: "Imagens/Pureza Floral.png" },
+                { nome: "ABSOLUTO NOIR", preco: 239.90, familia_olfativa: "Oriental Intenso", essencia_principal: "Incenso • Madeira Negra • Âmbar", descricao: "O perfume mais intenso e luxuoso da coleção Divine Cherie.", imagem: "Imagens/Absoluto Noir.png" },
+                { nome: "PÊCHE VELOUTÉE", preco: 169.90, familia_olfativa: "Frutado Floral", essencia_principal: "Pêssego • Flores Brancas • Musk", descricao: "Doce delicado e feminino com toque aveludado irresistível.", imagem: "Imagens/Peche Veloutee.png" },
+                { nome: "MAGNÉTIC AMBER", preco: 224.90, familia_olfativa: "Oriental Âmbar", essencia_principal: "Âmbar Dourado • Baunilha • Especiarias", descricao: "Sensual e sofisticado, perfeito para noites elegantes.", imagem: "Imagens/Magnetic Amber.png" },
+                { nome: "CHAMPAGNE ÉTERNEL", preco: 219.90, familia_olfativa: "Frutado Sofisticado", essencia_principal: "Champagne Rosé • Pera • Musk", descricao: "Luxuoso e brilhante, inspirado em celebrações inesquecíveis.", imagem: "Imagens/Champagne Eternel.png" },
+                { nome: "AURORA DE VÊNUS", preco: 189.90, familia_olfativa: "Floral Oriental", essencia_principal: "Peônia Rosa • Baunilha • Musk Rosado", descricao: "Romântico e encantador, inspirado na delicadeza celestial de Vênus.", imagem: "Imagens/Aurora de Vênus.png" },
+                { nome: "NOIR ECLIPSE", preco: 199.90, familia_olfativa: "Amadeirado Oriental Masculino", essencia_principal: "Couro • Âmbar Negro • Cedro", descricao: "Misterioso, elegante e extremamente marcante.", imagem: "Imagens/noir eclipse.png" },
+                { nome: "CHERIE", preco: 549.90, familia_olfativa: "Floral Doce", essencia_principal: "Rosa • Baunilha • Musk Branco", descricao: "Doce, feminina e inesquecível. Feita para encantar em todos os momentos.", imagem: "Imagens/cherie.jpeg" }
+            ];
+            
+            const vitrineFeminina = document.getElementById('vitrine-feminina');
+            const vitrineMasculina = document.getElementById('vitrine-masculina');
+            const containerAssinatura = document.getElementById('container-assinatura');
 
-        function moveSlide(direction, id) {
-            const vitrine = document.getElementById(id);
-            const card = vitrine.querySelector('.card-produto');
-            const wrapper = vitrine.parentElement;
-            const cardWidth = card.offsetWidth + 35; 
-            const maxScroll = vitrine.scrollWidth - wrapper.offsetWidth;
+            vitrineFeminina.innerHTML = '';
+            vitrineMasculina.innerHTML = '';
 
-            positions[id] += direction * cardWidth;
+            const perfumesMasculinos = [
+                'AZZURRO OCEANO', 'INTENSO HOMME', 'FOREST VERDE', 
+                'BLEU INFINI', 'NOIR ECLIPSE', 'ÉCLAT NOIR', 'OUD PREMIER'
+            ];
 
-            if (positions[id] < 0) positions[id] = 0;
-            if (positions[id] > maxScroll) positions[id] = maxScroll;
+            produtos.forEach(produto => {
+                const precoFormatado = produto.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                const nomeUpper = produto.nome.toUpperCase();
+                
+                const cardHTML = `
+                    <div class="card-produto">
+                        <img src="${produto.imagem}" alt="${produto.nome}" onerror="this.onerror=null; this.src='Imagens/Logo.jpeg';">
+                        <h3>${produto.nome}</h3>
+                        <p class="descricao">${produto.essencia_principal}</p>
+                        <span class="preco">R$ ${precoFormatado}</span>
+                        <button class="btn-comprar" onclick="adicionarAoCarrinho('${produto.nome}', '${precoFormatado}', '${produto.imagem}')">Comprar</button>
+                    </div>
+                `;
 
-            vitrine.style.transform = `translateX(-${positions[id]}px)`;
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const imagens = document.querySelectorAll('.vitrine img, .logo-img, .super-destaque-imagem img');
-            imagens.forEach(img => {
-                const srcAtual = img.getAttribute('src');
-                if (srcAtual && !srcAtual.startsWith('Imagens/') && !srcAtual.startsWith('http')) {
-                    img.setAttribute('src', 'Imagens/' + srcAtual);
+                if (nomeUpper === 'CHERIE') {
+                    containerAssinatura.innerHTML = `
+                        <div class="super-destaque-banner">
+                            <div class="super-destaque-imagem">
+                                <img src="${produto.imagem}" alt="${produto.nome}" onerror="this.onerror=null; this.src='Imagens/Logo.jpeg';">
+                            </div>
+                            <div class="super-destaque-info">
+                                <span class="tag-exclusivo">Fragrância Assinatura</span>
+                                <h2>${produto.nome} Eau de Parfum</h2>
+                                <p class="subtitulo-premium">${produto.familia_olfativa}</p>
+                                <p class="descricao-longa">${produto.descricao}</p>
+                                <div class="caracteristicas-mini">
+                                    <span>Substância: ${produto.essencia_principal}</span>
+                                </div>
+                                <div class="preco-comprar-bloco">
+                                    <span class="preco-destaque">R$ ${precoFormatado}</span>
+                                    <button class="btn-comprar-premium" onclick="adicionarAoCarrinho('${produto.nome}', '${precoFormatado}', '${produto.imagem}')">Adquirir Joia</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else if (perfumesMasculinos.includes(nomeUpper)) {
+                    vitrineMasculina.innerHTML += cardHTML;
+                } else {
+                    vitrineFeminina.innerHTML += cardHTML;
                 }
             });
-            const favicon = document.querySelector("link[rel*='icon']");
-            if (favicon) {
-                const favSrc = favicon.getAttribute('href');
-                if (favSrc && !favSrc.startsWith('Imagens/')) {
-                    favicon.setAttribute('href', 'Imagens/' + favSrc);
-                }
+        }
+
+        function rolarParaSecao(idSecao) {
+            const elemento = document.getElementById(idSecao);
+            if (elemento) {
+                elemento.scrollIntoView({ behavior: 'smooth' });
             }
-        });
+        }
+
+        function adicionarAoCarrinho(nome, preco, imagem) {
+            const urlDestino = `carrinho.html?produto=${encodeURIComponent(nome)}&preco=${encodeURIComponent(preco)}&img=${encodeURIComponent(imagem)}`;
+            window.location.href = urlDestino;
+        }
+
+        function scrollCarrossel(idVitrine, direcao) {
+            const vitrine = document.getElementById(idVitrine);
+            const scrollAmount = 340;
+            vitrine.scrollBy({ left: direcao * scrollAmount, behavior: 'smooth' });
+        }
+
+        window.onload = carregarProdutosDoBanco;
     </script>
 </body>
 </html>

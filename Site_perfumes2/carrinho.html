@@ -4,86 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seu Carrinho - Divine Cherie</title>
-    <link rel="stylesheet" href="st_css.css">
-    <link rel="icon" href="Logo.jpeg" type="image/x-icon">
+    <link rel="icon" type="image/jpeg" href="Imagens/Logo.jpeg">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo" onclick="window.location.href='Ste_vendas.html'">
-                <img src="Logo.jpeg" alt="Logo Divine Cherie" class="logo-img">
+            <div class="logo">
+                <img src="Imagens/Logo.jpeg" alt="Divine Cherie" class="logo-img">
                 <span>Divine Cherie</span>
             </div>
             <div class="menu-container">
                 <ul>
-                    <li><a href="Ste_vendas.html">Voltar para a Loja</a></li>
+                    <li><button onclick="window.location.href='index.html#feminino'">Feminino</button></li>
+                    <li><button onclick="window.location.href='index.html#masculino'">Masculino</button></li>
+                    <li><button class="btn-carrinho-texto" onclick="window.location.href='carrinho.html'">Seu Carrinho</button></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main class="container">
-        <div class="titulo-secao">
-            <h2>Seu Carrinho de Compras</h2>
-            <p id="carrinho-status">Confira o item selecionado antes de fechar o pedido.</p>
-        </div>
+    <main class="cart-page-container">
+        <div class="cart-card">
+            <h1 class="cart-title">Seu Carrinho</h1>
+            
+            <div class="cart-content-layout">
+                <div class="cart-main-content">
+                    <div class="cart-item">
+                        <div class="cart-item-image-wrapper">
+                            <img src="Imagens/Azzurro Oceano.png" alt="Azzurro Oceano">
+                        </div>
+                        <div class="cart-item-details">
+                            <h2 class="cart-item-name">AZZURRO OCEANO</h2>
+                            <p class="cart-item-description">Uma fragrância marcante que combina o frescor das notas marinhas com a sofisticação do limão siciliano e a profundidade do cedro. Perfeito para homens que exalam elegância e liberdade.</p>
+                            <span class="cart-item-price">R$ 189,90</span>
+                        </div>
+                    </div>
 
-        <div id="item-carrinho" class="card-produto" style="max-width: 500px; margin: 0 auto 40px auto; display: none;">
-            <img id="prod-img" src="" alt="Produto" style="max-height: 250px;">
-            <h3 id="prod-nome">Nome do Produto</h3>
-            <span class="preco" id="prod-preco">R$ 0,00</span>
-            <button class="btn-comprar" id="btn-whatsapp">Concluir Pedido no WhatsApp</button>
-        </div>
+                    <div class="shipping-section">
+                        <h3>Calcular Frete e Prazo</h3>
+                        <div class="shipping-input-group">
+                            <input type="text" placeholder="Digite seu CEP (00000-000)" maxlength="9">
+                            <button type="button">Calcular</button>
+                        </div>
+                    </div>
+                </div>
 
-        <div id="carrinho-vazio" style="text-align: center; padding: 40px;">
-            <p style="font-size: 1.2rem; color: #5a4b40; margin-bottom: 20px;">Seu carrinho está vazio no momento.</p>
-            <a href="Ste_vendas.html" class="btn-comprar" style="display: inline-block; width: auto; padding: 12px 30px; text-decoration: none;">Escolher um Perfume</a>
+                <div class="cart-summary-sidebar">
+                    <h3>Resumo do Pedido</h3>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>R$ 189,90</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Frete</span>
+                        <span class="free-shipping">Grátis</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Total</span>
+                        <span>R$ 189,90</span>
+                    </div>
+                    
+                    <div class="cart-actions">
+                        <button class="btn-checkout" onclick="alert('Compra finalizada com sucesso!')">Finalizar Compra</button>
+                        <a href="index.html" class="btn-continue">Continuar Comprando</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
-    <footer class="rodape-site">
-        <div class="informacoes-empresa" style="text-align: center; margin-top: 30px; font-size: 0.85rem; color: #4b3f36; line-height: 1.6;">
-            <p><strong>Divine Cherie</strong></p>
-            <p>CNPJ: 23.435.334/0001-55</p>
-            <p>Endereço: Rua Oscar Freire, 935 – Jardim Paulista, São Paulo - SP</p>
-        </div>
-    </footer>
+    <a href="https://wa.me/seu-numero" class="whatsapp-popup" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const produto = urlParams.get('produto');
-            const preco = urlParams.get('preco');
-            const img = urlParams.get('img');
-
-            if (produto && preco) {
-                document.getElementById('carrinho-vazio').style.display = 'none';
-                document.getElementById('item-carrinho').style.display = 'block';
-                
-                document.getElementById('prod-nome').innerText = produto;
-                document.getElementById('prod-preco').innerText = 'R$ ' + preco;
-                
-                let imgSrc = img;
-                if (imgSrc && !imgSrc.startsWith('imagens/') && !imgSrc.startsWith('http')) {
-                    imgSrc = 'imagens/' + imgSrc;
-                }
-                document.getElementById('prod-img').src = imgSrc;
-
-                const mensagem = encodeURIComponent(`Olá! Gostaria de concluir a compra do perfume ${produto} no valor de R$ ${preco}.`);
-                const whatsappUrl = `https://wa.me/5511945747137?text=${mensagem}`;
-                
-                document.getElementById('btn-whatsapp').setAttribute('onclick', `alert('Para concluir a sua compra, você será redirecionado para o nosso WhatsApp suporte.'); window.open('${whatsappUrl}', '_blank');`);
-            }
-            
-            const logoImg = document.querySelector('.logo-img');
-            if (logoImg) {
-                const src = logoImg.getAttribute('src');
-                if (src && !src.startsWith('imagens/') && !src.startsWith('http')) {
-                    logoImg.setAttribute('src', 'imagens/' + src);
-                }
-            }
-        });
-    </script>
 </body>
 </html>
