@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seu Carrinho - Divine Cherie</title>
     <link rel="icon" type="image/jpeg" href="Imagens/Logo.jpeg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo">
+            <div class="logo" onclick="window.location.href='index.html'" style="cursor: pointer;">
                 <img src="Imagens/Logo.jpeg" alt="Divine Cherie" class="logo-img">
                 <span>Divine Cherie</span>
             </div>
@@ -36,8 +36,8 @@
                             <img src="Imagens/Azzurro Oceano.png" alt="Azzurro Oceano">
                         </div>
                         <div class="cart-item-details">
-                            <h2 class="cart-item-name">AZZURRO OCEANO</h2>
-                            <p class="cart-item-description">Uma fragrância marcante que combina o frescor das notas marinhas com a sofisticação do limão siciliano e a profundidade do cedro. Perfeito para homens que exalam elegância e liberdade.</p>
+                            <h2 class="cart-item-name" id="carrinho-nome-item">AZZURRO OCEANO</h2>
+                            <p class="cart-item-description">Uma fragrância marcante que combina o frescor das notas marinhas com a sofisticação do limão siciliano e a profundidade do cedro.</p>
                             <span class="cart-item-price">R$ 189,90</span>
                         </div>
                     </div>
@@ -45,8 +45,8 @@
                     <div class="shipping-section">
                         <h3>Calcular Frete e Prazo</h3>
                         <div class="shipping-input-group">
-                            <input type="text" placeholder="Digite seu CEP (00000-000)" maxlength="9">
-                            <button type="button">Calcular</button>
+                            <input type="text" id="cart-cep-input" placeholder="Digite seu CEP (00000-000)" maxlength="9">
+                            <button type="button" onclick="alert('Frete Grátis aplicado para a sua região!')">Calcular</button>
                         </div>
                     </div>
                 </div>
@@ -63,11 +63,11 @@
                     </div>
                     <div class="summary-row total-row">
                         <span>Total</span>
-                        <span>R$ 189,90</span>
+                        <span id="carrinho-total-valor">R$ 189,90</span>
                     </div>
                     
                     <div class="cart-actions">
-                        <button class="btn-checkout" onclick="alert('Compra finalizada com sucesso!')">Finalizar Compra</button>
+                        <button class="btn-checkout" onclick="enviarPedidoWhatsApp()">Finalizar Compra via WhatsApp</button>
                         <a href="index.html" class="btn-continue">Continuar Comprando</a>
                     </div>
                 </div>
@@ -75,9 +75,28 @@
         </div>
     </main>
 
-    <a href="https://wa.me/seu-numero" class="whatsapp-popup" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <a href="https://wa.me" class="whatsapp-popup" target="_blank" rel="noopener noreferrer">
+        <img src="https://flaticon.com" alt="WhatsApp">
     </a>
 
+    <script>
+        function enviarPedidoWhatsApp() {
+            const seuNumeroTelefone = "5511945747137"; 
+
+            const nomePerfume = document.getElementById('carrinho-nome-item').innerText;
+            const valorTotal = document.getElementById('carrinho-total-valor').innerText;
+            const cepDigitado = document.getElementById('cart-cep-input').value || "Não informado";
+
+            const mensagem = `Olá, Divine Cherie! Gostaria de finalizar o meu pedido:\n\n` +
+                             `🛍️ *Produto:* ${nomePerfume}\n` +
+                             `💰 *Valor Total:* ${valorTotal}\n` +
+                             `📍 *CEP para entrega:* ${cepDigitado}\n\n` +
+                             `Como posso prosseguir com o pagamento?`;
+
+            const linkWhatsApp = `https://wa.me{seuNumeroTelefone}?text=${encodeURIComponent(mensagem)}`;
+
+            window.open(linkWhatsApp, '_blank');
+        }
+    </script>
 </body>
 </html>

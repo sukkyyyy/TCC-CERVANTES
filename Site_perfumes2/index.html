@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divine Cherie - Alta Perfumaria</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=3">
     <link rel="icon" href="Imagens/Logo.jpeg" type="image/x-icon">
     <style>
-        html {
-            scroll-behavior: smooth;
+        html { scroll-behavior: smooth; }
+        .vitrine-wrapper { overflow: hidden; width: 100%; }
+        .vitrine { display: flex; gap: 20px; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; }
+        .vitrine::-webkit-scrollbar { display: none; }
+        .carousel-container { display: flex; align-items: center; gap: 15px; position: relative; }
+        .arrow-btn {
+            width: 45px;
+            height: 45px;
+            border: 1px solid #b08259;
+            background-color: #fdfaf7;
+            color: #8c5e38;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.35s ease;
+            box-shadow: 0 4px 10px rgba(140, 94, 56, 0.08);
+            flex-shrink: 0;
+        }
+        .arrow-btn:hover {
+            background: linear-gradient(135deg, #b08259, #8c5e38);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(140, 94, 56, 0.2);
         }
     </style>
 </head>
@@ -29,7 +53,6 @@
             </div>
         </nav>
     </header>
-
     <main class="container">
         <section class="hero">
             <div class="hero-content">
@@ -39,42 +62,56 @@
         </section>
 
         <section class="super-destaque-container" id="container-assinatura">
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; background: rgba(253, 250, 247, 0.6); padding: 40px; border-radius: 32px; border: 1px solid rgba(140, 94, 56, 0.15); box-shadow: 0 10px 30px rgba(140, 94, 56, 0.08); margin-bottom: 60px;">
+                <div style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
+                    <img src="Imagens/cherie.jpeg" alt="Cherie Eau de Parfum" style="max-width: 100%; max-height: 450px; object-fit: contain; border-radius: 16px;">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <span style="background: #ebdccf; color: #8c5e38; font-size: 0.85rem; font-weight: 700; padding: 6px 16px; border-radius: 999px; letter-spacing: 1px; display: inline-block; margin-bottom: 15px;">FRAGRÂNCIA ASSINATURA</span>
+                    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: #3d312a; margin-bottom: 10px; font-weight: 600; line-height: 1.1;">CHERIE Eau de Parfum</h2>
+                    <p style="font-style: italic; color: #8c5e38; font-size: 1.2rem; margin-bottom: 20px;">Floral Doce</p>
+                    <p style="color: #5a4b40; line-height: 1.7; font-size: 1.1rem; margin-bottom: 25px;">Doce, feminina e inesquecível. Feita para encantar em todos os momentos.</p>
+                    <div style="border-top: 1px solid rgba(140, 94, 56, 0.15); padding-top: 20px; margin-bottom: 30px;">
+                        <p style="color: #3d312a; font-size: 0.95rem;"><strong>Substância:</strong> Rosa • Baunilha • Musk Branco</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+                        <span style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: #8c5e38;">R$ 549,90</span>
+                        <button style="background: linear-gradient(135deg, #b08259, #8c5e38); color: white; border: none; padding: 16px 40px; border-radius: 16px; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: all 0.35s ease; box-shadow: 0 5px 15px rgba(140, 94, 56, 0.2);">Adquirir Joia</button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="secao-produtos" id="feminino">
-            <div class="titulo-secao">
+            <div class="titulo-secao-caixa">
                 <h2>Coleção Feminina</h2>
                 <p>Fragrâncias delicadas, marcantes e sofisticadas</p>
             </div>
-            
             <div class="carousel-container">
-                <button class="arrow-btn prev" onclick="scrollCarrossel('vitrine-feminina', -1)">&#10094;</button>
+                <button class="arrow-btn prev" onclick="scrollCarrossel('vitrine-feminina', -1)">❮</button>
                 <div class="vitrine-wrapper">
-                    <div class="vitrine" id="vitrine-feminina">
-                    </div>
+                    <div class="vitrine" id="vitrine-feminina"></div>
                 </div>
-                <button class="arrow-btn next" onclick="scrollCarrossel('vitrine-feminina', 1)">&#10095;</button>
+                <button class="arrow-btn next" onclick="scrollCarrossel('vitrine-feminina', 1)">❯</button>
             </div>
         </section>
 
         <section class="secao-produtos" id="masculino" style="margin-top: 80px;">
-            <div class="titulo-secao">
+            <div class="titulo-secao-caixa">
                 <h2>Coleção Masculina</h2>
                 <p>Fragrâncias intensas, amadeiradas e imponentes</p>
             </div>
-            
             <div class="carousel-container">
-                <button class="arrow-btn prev" onclick="scrollCarrossel('vitrine-masculina', -1)">&#10094;</button>
+                <button class="arrow-btn prev" onclick="scrollCarrossel('vitrine-masculina', -1)">❮</button>
                 <div class="vitrine-wrapper">
-                    <div class="vitrine" id="vitrine-masculina">
-                    </div>
+                    <div class="vitrine" id="vitrine-masculina"></div>
                 </div>
-                <button class="arrow-btn next" onclick="scrollCarrossel('vitrine-masculina', 1)">&#10095;</button>
+                <button class="arrow-btn next" onclick="scrollCarrossel('vitrine-masculina', 1)">❯</button>
             </div>
         </section>
     </main>
 
-    <footer style="margin-top: 100px; padding: 40px 20px; background-color: #f9f6f0; border-top: 1px solid #eaddca; text-align: center;">
+    <footer style="margin-top: 100px; padding: 40px 20px; background-color: transparent; border-top: 4px solid #b08259; text-align: center;">
         <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; text-align: left; gap: 20px;">
             <div style="flex: 1; min-width: 250px;">
                 <h3 style="color: #8c6239; margin-bottom: 15px;">Divine Cherie</h3>
@@ -97,106 +134,58 @@
         <p style="color: #999; font-size: 12px;">&copy; 2026 Divine Cherie - Todos os direitos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/5500000000000" class="whatsapp-popup" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Contato">
+    <a href="https://wa.me" class="whatsapp-popup" target="_blank" rel="noopener noreferrer">
+        <img src="https://flaticon.com" alt="WhatsApp Contato">
     </a>
-
     <script>
         function carregarProdutosDoBanco() {
             const produtos = [
-                { nome: "ÉCLAT NOIR", preco: 209.90, familia_olfativa: "Amadeirado Oriental", essencia_principal: "Baunilha Negra • Couro • Patchouli", descricao: "Sedutor e sofisticado, Éclat Noir foi criado para pessoas intensas e elegantes.", imagem: "Imagens/Eclat Noir.png" },
-                { nome: "LUMIÈRE BLANCHE", preco: 179.90, familia_olfativa: "Floral Musk", essencia_principal: "Flores Brancas • Musk • Baunilha Cremosa", descricao: "Uma fragrância delicada e iluminada, perfeita para mulheres elegantes e românticas.", imagem: "Imagens/Lumiere Blanche.png" },
-                { nome: "AZZURRO OCEANO", preco: 189.90, familia_olfativa: "Aquático Aromático", essencia_principal: "Notas Marinhas • Limão Siciliano • Cedro", descricao: "Refrescante e moderno, transmite liberdade e sensação de brisa do mar.", imagem: "Imagens/Azzurro Oceano.png" },
-                { nome: "INTENSO HOMME", preco: 199.90, familia_olfativa: "Amadeirado Especiado", essencia_principal: "Âmbar • Pimenta • Sândalo", descricao: "Masculino sofisticado e extremamente marcante para homens confiantes.", imagem: "Imagens/Intenso Homme.png" },
-                { nome: "ROSE DELICATE", preco: 169.90, familia_olfativa: "Floral Rosado", essencia_principal: "Rosa Chá • Peônia • Musk", descricao: "Romântico e elegante, perfeito para quem ama fragrâncias femininas suaves.", imagem: "Imagens/Rose Delicate.png" },
-                { nome: "VANILLE DORÉE", preco: 184.90, familia_olfativa: "Oriental Gourmand", essencia_principal: "Baunilha Dourada • Caramelo • Âmbar", descricao: "Doce sofisticado e extremamente viciante, perfeito para noites especiais.", imagem: "Imagens/Vanille Doree.png" },
-                { nome: "FOREST VERDE", preco: 194.90, familia_olfativa: "Verde Amadeirado", essencia_principal: "Cedro • Folhas Verdes • Vetiver", descricao: "Inspirado na natureza luxuosa e na elegância das florestas profundas.", imagem: "Imagens/Forest Verde.png" },
-                { nome: "LAVANDA SERENA", preco: 164.90, familia_olfativa: "Aromático Floral", essencia_principal: "Lavanda Francesa • Musk • Íris", descricao: "Suave, elegante e relaxante, ideal para o dia a dia.", imagem: "Imagens/Lavanda Serena.png" },
-                { nome: "OUD PREMIER", preco: 229.90, familia_olfativa: "Oriental Amadeirado", essencia_principal: "Oud Árabe • Incenso • Âmbar", descricao: "Luxuoso e exótico, inspirado na perfumaria árabe premium.", imagem: "Imagens/Oud Premier.png" },
-                { nome: "SANTAL ÉLÉGANCE", preco: 214.90, familia_olfativa: "Amadeirado Cremoso", essencia_principal: "Sândalo • Baunilha • Musk", descricao: "Elegante e refinado, perfeito para quem ama perfumes sofisticados.", imagem: "Imagens/Santal Elegance.png" },
-                { nome: "BLEU INFINI", preco: 189.90, familia_olfativa: "Fresco Amadeirado", essencia_principal: "Notas Oceânicas • Bergamota • Cedro Azul", descricao: "Moderno, refrescante e extremamente versátil.", imagem: "Imagens/Bleu Infini.png" },
-                { nome: "CITRUS FRAIS", preco: 159.90, familia_olfativa: "Cítrico Fresco", essencia_principal: "Laranja Siciliana • Limão • Musk", descricao: "Leve, vibrante e perfeito para dias quentes.", imagem: "Imagens/Citrus Frais.png" },
-                { nome: "PUREZA FLORAL", preco: 174.90, familia_olfativa: "Floral Limpo", essencia_principal: "Lírio Branco • Jasmim • Musk", descricao: "Delicado, confortável e elegante como pele limpa e hidratada.", imagem: "Imagens/Pureza Floral.png" },
-                { nome: "ABSOLUTO NOIR", preco: 239.90, familia_olfativa: "Oriental Intenso", essencia_principal: "Incenso • Madeira Negra • Âmbar", descricao: "O perfume mais intenso e luxuoso da coleção Divine Cherie.", imagem: "Imagens/Absoluto Noir.png" },
-                { nome: "PÊCHE VELOUTÉE", preco: 169.90, familia_olfativa: "Frutado Floral", essencia_principal: "Pêssego • Flores Brancas • Musk", descricao: "Doce delicado e feminino com toque aveludado irresistível.", imagem: "Imagens/Peche Veloutee.png" },
-                { nome: "MAGNÉTIC AMBER", preco: 224.90, familia_olfativa: "Oriental Âmbar", essencia_principal: "Âmbar Dourado • Baunilha • Especiarias", descricao: "Sensual e sofisticado, perfeito para noites elegantes.", imagem: "Imagens/Magnetic Amber.png" },
-                { nome: "CHAMPAGNE ÉTERNEL", preco: 219.90, familia_olfativa: "Frutado Sofisticado", essencia_principal: "Champagne Rosé • Pera • Musk", descricao: "Luxuoso e brilhante, inspirado em celebrações inesquecíveis.", imagem: "Imagens/Champagne Eternel.png" },
-                { nome: "AURORA DE VÊNUS", preco: 189.90, familia_olfativa: "Floral Oriental", essencia_principal: "Peônia Rosa • Baunilha • Musk Rosado", descricao: "Romântico e encantador, inspirado na delicadeza celestial de Vênus.", imagem: "Imagens/Aurora de Vênus.png" },
-                { nome: "NOIR ECLIPSE", preco: 199.90, familia_olfativa: "Amadeirado Oriental Masculino", essencia_principal: "Couro • Âmbar Negro • Cedro", descricao: "Misterioso, elegante e extremamente marcante.", imagem: "Imagens/noir eclipse.png" },
-                { nome: "CHERIE", preco: 549.90, familia_olfativa: "Floral Doce", essencia_principal: "Rosa • Baunilha • Musk Branco", descricao: "Doce, feminina e inesquecível. Feita para encantar em todos os momentos.", imagem: "Imagens/cherie.jpeg" }
+                { n: "ÉCLAT NOIR", p: 209.90, i: "Imagens/Eclat Noir.png", g: "feminino", d: "Sedutor e sofisticado, Éclat Noir combina baunilha negra e patchouli." },
+                { n: "LUMIÈRE BLANCHE", p: 179.90, i: "Imagens/Lumiere Blanche.png", g: "feminino", d: "Uma fragrância delicada e iluminada com base de flores brancas e musk." },
+                { n: "AZZURRO OCEANO", p: 189.90, i: "Imagens/Azzurro Oceano.png", g: "masculino", d: "Fresco, aquático e moderno. Traz notas marinhas com limão siciliano." },
+                { n: "INTENSO HOMME", p: 199.90, i: "Imagens/Intenso Homme.png", g: "masculino", d: "Um amadeirado especiado marcante com toques intensos de âmbar e pimenta." },
+                { n: "ROSE DELICATE", p: 169.90, i: "Imagens/Rose Delicate.png", g: "feminino", d: "A harmonia clássica da rosa chá com a peônia. Um floral muito suave." },
+                { n: "VANILLE DORÉE", p: 184.90, i: "Imagens/Vanille Doree.png", g: "feminino", d: "Doce oriental gourmand com acordes luxuosos de caramelo e baunilha." },
+                { n: "FOREST VERDE", p: 194.90, i: "Imagens/Forest Verde.png", g: "masculino", d: "Traz notas verdes de vetiver misturadas à robustez clássica do cedro." },
+                { n: "LAVANDA SERENA", p: 164.90, i: "Imagens/Lavanda Serena.png", g: "feminino", d: "Equilibrado e relaxante. Traz o frescor puro da lavanda francesa." },
+                { n: "OUD PREMIER", p: 229.90, i: "Imagens/Oud Premier.png", g: "masculino", d: "Luxuoso e misterioso, baseado no oud árabe premium envolto por incenso." },
+                { n: "SANTAL ÉLÉGANCE", p: 214.90, i: "Imagens/Santal Elegance.png", g: "masculino", d: "A imponência do sândalo amadeirado com a cremosidade da baunilha." },
+                { n: "BLEU INFINI", p: 189.90, i: "Imagens/Bleu Infini.png", g: "masculino", d: "Refrescante amadeirado moderno com notas oceânicas intensas." }
             ];
+
+            const vFem = document.getElementById('vitrine-feminina');
+            const vMasc = document.getElementById('vitrine-masculina');
             
-            const vitrineFeminina = document.getElementById('vitrine-feminina');
-            const vitrineMasculina = document.getElementById('vitrine-masculina');
-            const containerAssinatura = document.getElementById('container-assinatura');
+            if (vFem) vFem.innerHTML = ""; 
+            if (vMasc) vMasc.innerHTML = "";
 
-            vitrineFeminina.innerHTML = '';
-            vitrineMasculina.innerHTML = '';
-
-            const perfumesMasculinos = [
-                'AZZURRO OCEANO', 'INTENSO HOMME', 'FOREST VERDE', 
-                'BLEU INFINI', 'NOIR ECLIPSE', 'ÉCLAT NOIR', 'OUD PREMIER'
-            ];
-
-            produtos.forEach(produto => {
-                const precoFormatado = produto.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-                const nomeUpper = produto.nome.toUpperCase();
+            produtos.forEach(p => {
+                const query = `nome=${encodeURIComponent(p.n)}&preco=${encodeURIComponent('R$ ' + p.p.toFixed(2))}&img=${encodeURIComponent(p.i)}&desc=${encodeURIComponent(p.d)}`;
+                const urlProduto = `Produto.html?${query}`;
                 
-                const cardHTML = `
-                    <div class="card-produto">
-                        <img src="${produto.imagem}" alt="${produto.nome}" onerror="this.onerror=null; this.src='Imagens/Logo.jpeg';">
-                        <h3>${produto.nome}</h3>
-                        <p class="descricao">${produto.essencia_principal}</p>
-                        <span class="preco">R$ ${precoFormatado}</span>
-                        <button class="btn-comprar" onclick="adicionarAoCarrinho('${produto.nome}', '${precoFormatado}', '${produto.imagem}')">Comprar</button>
+                const card = `
+                    <div class="produto-card">
+                        <a href="${urlProduto}" style="text-decoration: none; display: block;">
+                            <img src="${p.i}" alt="${p.n}">
+                            <h3>${p.n}</h3>
+                        </a>
+                        <p>R$ ${p.p.toFixed(2)}</p>
+                        <button>Adicionar</button>
                     </div>
                 `;
-
-                if (nomeUpper === 'CHERIE') {
-                    containerAssinatura.innerHTML = `
-                        <div class="super-destaque-banner">
-                            <div class="super-destaque-imagem">
-                                <img src="${produto.imagem}" alt="${produto.nome}" onerror="this.onerror=null; this.src='Imagens/Logo.jpeg';">
-                            </div>
-                            <div class="super-destaque-info">
-                                <span class="tag-exclusivo">Fragrância Assinatura</span>
-                                <h2>${produto.nome} Eau de Parfum</h2>
-                                <p class="subtitulo-premium">${produto.familia_olfativa}</p>
-                                <p class="descricao-longa">${produto.descricao}</p>
-                                <div class="caracteristicas-mini">
-                                    <span>Substância: ${produto.essencia_principal}</span>
-                                </div>
-                                <div class="preco-comprar-bloco">
-                                    <span class="preco-destaque">R$ ${precoFormatado}</span>
-                                    <button class="btn-comprar-premium" onclick="adicionarAoCarrinho('${produto.nome}', '${precoFormatado}', '${produto.imagem}')">Adquirir Joia</button>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                } else if (perfumesMasculinos.includes(nomeUpper)) {
-                    vitrineMasculina.innerHTML += cardHTML;
-                } else {
-                    vitrineFeminina.innerHTML += cardHTML;
-                }
+                if (p.g === "feminino" && vFem) vFem.innerHTML += card;
+                if (p.g === "masculino" && vMasc) vMasc.innerHTML += card;
             });
         }
 
-        function rolarParaSecao(idSecao) {
-            const elemento = document.getElementById(idSecao);
-            if (elemento) {
-                elemento.scrollIntoView({ behavior: 'smooth' });
-            }
+        function scrollCarrossel(id, dir) {
+            const vitrine = document.getElementById(id);
+            if (vitrine) { vitrine.scrollBy({ left: dir * 300, behavior: 'smooth' }); }
         }
 
-        function adicionarAoCarrinho(nome, preco, imagem) {
-            const urlDestino = `carrinho.html?produto=${encodeURIComponent(nome)}&preco=${encodeURIComponent(preco)}&img=${encodeURIComponent(imagem)}`;
-            window.location.href = urlDestino;
-        }
-
-        function scrollCarrossel(idVitrine, direcao) {
-            const vitrine = document.getElementById(idVitrine);
-            const scrollAmount = 340;
-            vitrine.scrollBy({ left: direcao * scrollAmount, behavior: 'smooth' });
+        function rolarParaSecao(id) {
+            const secao = document.getElementById(id);
+            if (secao) { secao.scrollIntoView({ behavior: 'smooth' }); }
         }
 
         window.onload = carregarProdutosDoBanco;
