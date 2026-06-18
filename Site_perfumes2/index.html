@@ -179,9 +179,30 @@
         }
 
         function scrollCarrossel(id, dir) {
-            const vitrine = document.getElementById(id);
-            if (vitrine) { vitrine.scrollBy({ left: dir * 300, behavior: 'smooth' }); }
-        }
+
+const vitrine = document.getElementById(id);
+
+if (!vitrine) return;
+
+const card = vitrine.querySelector(".produto-card");
+
+if (!card) return;
+
+const estilo = window.getComputedStyle(vitrine);
+
+const gap =
+    parseInt(estilo.gap) ||
+    parseInt(estilo.columnGap) ||
+    20;
+
+const distancia = card.offsetWidth + gap;
+
+vitrine.scrollBy({
+    left: dir * distancia,
+    behavior: "smooth"
+});
+
+}
 
         function rolarParaSecao(id) {
             const secao = document.getElementById(id);

@@ -170,8 +170,11 @@ nav ul li button:hover {
     display: flex;
     gap: 20px;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-behavior: smooth;
     scrollbar-width: none;
+    scroll-snap-type: x proximity;
+    padding: 5px;
 }
 
 .vitrine::-webkit-scrollbar {
