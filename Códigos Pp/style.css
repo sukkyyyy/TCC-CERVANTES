@@ -35,9 +35,6 @@ body {
     min-height: 100vh;
 }
 
-/* =============================
-   HEADER E NAVEGAÇÃO
-   ============================= */
 header {
     position: sticky;
     top: 0;
