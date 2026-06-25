@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Cherie - Alta Perfumaria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Imagens/Logo.jpeg" type="image/jpeg">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a class="logo" href="index.html">
+                <img src="Imagens/Logo.jpeg" alt="Logo Divine Cherie" class="logo-img">
+                <span>Divine Cherie</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="menu-container" id="menu-container">
+                <ul>
+                    <li><button class="btn-menu-nav" onclick="rolarParaSecao('feminino'); fecharMenu()">Feminino</button></li>
+                    <li><button class="btn-menu-nav" onclick="rolarParaSecao('masculino'); fecharMenu()">Masculino</button></li>
+                    <li>
+                        <button class="btn-carrinho-texto" onclick="window.location.href='carrinho.html'">
+                            Carrinho
+                            <span class="cart-badge" id="badge-nav">0</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-eyebrow">Alta Perfumaria Exclusiva</span>
+                <h1>Divine Cherie</h1>
+                <p>Descubra fragrâncias criadas para transformar presença em elegância. Sofisticação, intensidade e personalidade em cada detalhe.</p>
+                <div class="hero-cta-group">
+                    <button class="btn-hero-primary" onclick="rolarParaSecao('feminino')">Explorar Coleção</button>
+                    <button class="btn-hero-secondary" onclick="rolarParaSecao('destaque')">Fragrância Assinatura</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESTAQUE ASSINATURA -->
+        <section class="super-destaque-container" id="destaque">
+            <div class="destaque-card">
+                <div class="destaque-img-col">
+                    <img src="Imagens/cherie.jpeg" alt="Cherie Eau de Parfum">
+                </div>
+                <div class="destaque-info-col">
+                    <span class="badge-assinatura">Fragrância Assinatura</span>
+                    <h2 class="destaque-nome">CHERIE Eau de Parfum</h2>
+                    <p class="destaque-familia">Floral Doce</p>
+                    <p class="destaque-descricao">Doce, feminina e inesquecível. Criada para encantar em todos os momentos, CHERIE é a expressão máxima da elegância Divine Cherie — uma fragrância que marca presença e fica na memória.</p>
+                    <div class="destaque-notas">
+                        <p><strong>Notas de Saída:</strong> Frutas vermelhas suaves</p>
+                        <p><strong>Notas de Corpo:</strong> Rosas e flores delicadas</p>
+                        <p><strong>Notas de Fundo:</strong> Baunilha cremosa e Musk Branco</p>
+                    </div>
+                    <div class="destaque-compra">
+                        <span class="destaque-preco">R$ 549,90</span>
+                        <button class="btn-adquirir" onclick="adicionarCarrinho({n:'CHERIE Eau de Parfum', p:549.90, i:'Imagens/cherie.jpeg', g:'feminino', d:'Doce, feminina e inesquecível. Criada para encantar em todos os momentos.', f:'Floral Doce'})">Adquirir Joia</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLEÇÃO FEMININA -->
+        <section class="secao-produtos" id="feminino">
+            <div class="titulo-secao-caixa">
+                <h2>Coleção Feminina</h2>
+                <p>Fragrâncias delicadas, marcantes e sofisticadas</p>
+            </div>
+            <div class="carousel-container">
+                <button class="arrow-btn" onclick="scrollCarrossel('vitrine-feminina', -1)" aria-label="Anterior">&#10094;</button>
+                <div class="vitrine-wrapper">
+                    <div class="vitrine" id="vitrine-feminina"></div>
+                </div>
+                <button class="arrow-btn" onclick="scrollCarrossel('vitrine-feminina', 1)" aria-label="Próximo">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- COLEÇÃO MASCULINA -->
+        <section class="secao-produtos" id="masculino" style="margin-top: 80px;">
+            <div class="titulo-secao-caixa">
+                <h2>Coleção Masculina</h2>
+                <p>Fragrâncias intensas, amadeiradas e imponentes</p>
+            </div>
+            <div class="carousel-container">
+                <button class="arrow-btn" onclick="scrollCarrossel('vitrine-masculina', -1)" aria-label="Anterior">&#10094;</button>
+                <div class="vitrine-wrapper">
+                    <div class="vitrine" id="vitrine-masculina"></div>
+                </div>
+                <button class="arrow-btn" onclick="scrollCarrossel('vitrine-masculina', 1)" aria-label="Próximo">&#10095;</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h3>Divine Cherie</h3>
+                <p>Sua marca de alta perfumaria com essências importadas, exclusividade e fixação marcante. Cada frasco conta uma história.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Navegação</h3>
+                <ul>
+                    <li><span onclick="rolarParaSecao('feminino')">Coleção Feminina</span></li>
+                    <li><span onclick="rolarParaSecao('masculino')">Coleção Masculina</span></li>
+                    <li><span onclick="rolarParaSecao('destaque')">Fragrância Assinatura</span></li>
+                    <li><a href="carrinho.html">Seu Carrinho</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contato</h3>
+                <p>
+                    Atendimento: sac@divinecherie.com.br<br>
+                    WhatsApp: (11) 94574-7137<br>
+                    Seg–Sex: 9h às 18h
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Divine Cherie — Todos os direitos reservados.</p>
+            <p>Alta Perfumaria Brasileira</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/5511945747137" class="whatsapp-popup" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // ==========================================
+        // CATÁLOGO COMPLETO DE PRODUTOS
+        // ==========================================
+        const PRODUTOS = [
+            { n: "ÉCLAT NOIR",       p: 209.90, i: "Imagens/Eclat Noir.png",         g: "feminino",  f: "Amadeirado Oriental",   d: "Sedutor e sofisticado, Éclat Noir combina baunilha negra e patchouli. Um perfume misterioso que deixa presença marcante por onde passa." },
+            { n: "LUMIÈRE BLANCHE",  p: 179.90, i: "Imagens/Lumiere Blanche.png",     g: "feminino",  f: "Floral Musk",            d: "Uma fragrância delicada e iluminada, perfeita para mulheres elegantes e românticas. Flores brancas com musk e baunilha cremosa." },
+            { n: "ROSE DELICATE",    p: 169.90, i: "Imagens/Rose Delicate.png",        g: "feminino",  f: "Floral Rosado",          d: "A harmonia clássica da rosa chá com a peônia. Um floral muito suave, romântico e elegante, perfeito para quem ama fragrâncias femininas." },
+            { n: "VANILLE DORÉE",    p: 184.90, i: "Imagens/Vanille Doree.png",        g: "feminino",  f: "Oriental Gourmand",      d: "Doce sofisticado e extremamente viciante. Acordes luxuosos de caramelo e baunilha dourada, perfeito para noites especiais." },
+            { n: "LAVANDA SERENA",   p: 164.90, i: "Imagens/Lavanda Serena.png",       g: "feminino",  f: "Aromático Floral",       d: "Suave, elegante e relaxante. Traz o frescor puro da lavanda francesa com íris e violeta. Ideal para o dia a dia." },
+            { n: "CITRUS FRAIS",     p: 159.90, i: "Imagens/Citrus Frais.png",         g: "feminino",  f: "Cítrico Fresco",         d: "Leve, vibrante e perfeito para dias quentes. Laranja siciliana, limão e musk em uma combinação refrescante e alegre." },
+            { n: "PUREZA FLORAL",    p: 174.90, i: "Imagens/Pureza Floral.png",        g: "feminino",  f: "Floral Limpo",           d: "Delicado, confortável e elegante como pele limpa e hidratada. Lírio branco, jasmim e musk em perfeita harmonia." },
+            { n: "PÊCHE VELOUTÉE",   p: 169.90, i: "Imagens/Peche Veloutee.png",       g: "feminino",  f: "Frutado Floral",         d: "Doce delicado e feminino com toque aveludado irresistível. Pêssego, flores brancas e musk em uma fragrância encantadora." },
+            { n: "CHAMPAGNE ÉTERNEL",p: 219.90, i: "Imagens/Champagne Eternel.png",    g: "feminino",  f: "Frutado Sofisticado",    d: "Luxuoso e brilhante, inspirado em celebrações inesquecíveis. Champagne rosé, pera e musk em uma composição festiva e elegante." },
+            { n: "AZZURRO OCEANO",   p: 189.90, i: "Imagens/Azzurro Oceano.png",       g: "masculino", f: "Aquático Aromático",     d: "Fresco, aquático e moderno. Traz notas marinhas com limão siciliano e cedro. Transmite liberdade e sensação de brisa do mar." },
+            { n: "INTENSO HOMME",    p: 199.90, i: "Imagens/Intenso Homme.png",        g: "masculino", f: "Amadeirado Especiado",   d: "Um amadeirado especiado marcante com toques intensos de âmbar e pimenta. Masculino sofisticado para homens confiantes." },
+            { n: "FOREST VERDE",     p: 194.90, i: "Imagens/Forest Verde.png",          g: "masculino", f: "Verde Amadeirado",       d: "Traz notas verdes de vetiver misturadas à robustez clássica do cedro. Inspirado na natureza luxuosa das florestas profundas." },
+            { n: "OUD PREMIER",      p: 229.90, i: "Imagens/Oud Premier.png",           g: "masculino", f: "Oriental Amadeirado",    d: "Luxuoso e misterioso, baseado no oud árabe premium envolto por incenso e âmbar. Inspirado na perfumaria árabe premium." },
+            { n: "SANTAL ÉLÉGANCE",  p: 214.90, i: "Imagens/Santal Elegance.png",       g: "masculino", f: "Amadeirado Cremoso",     d: "A imponência do sândalo amadeirado com a cremosidade da baunilha. Elegante e refinado para quem ama perfumes sofisticados." },
+            { n: "BLEU INFINI",      p: 189.90, i: "Imagens/Bleu Infini.png",           g: "masculino", f: "Fresco Amadeirado",      d: "Refrescante amadeirado moderno com notas oceânicas intensas. Moderno, refrescante e extremamente versátil." },
+            { n: "ABSOLUTO NOIR",    p: 239.90, i: "Imagens/Absoluto Noir.png",         g: "masculino", f: "Oriental Intenso",       d: "O perfume mais intenso e luxuoso da coleção Divine Cherie. Incenso, madeira negra e âmbar em uma composição poderosa e marcante." },
+            { n: "NOIR ECLIPSE",     p: 199.90, i: "Imagens/noir eclipse.png",          g: "masculino", f: "Amadeirado Oriental",    d: "Misterioso, elegante e extremamente marcante. Couro, âmbar negro e cedro em uma fragrância que exala poder e sofisticação." },
+            { n: "MAGNÉTIC AMBER",   p: 224.90, i: "Imagens/Magnetic Amber.png",        g: "masculino", f: "Oriental Âmbar",         d: "Sensual e sofisticado, perfeito para noites elegantes. Âmbar dourado, baunilha e especiarias em uma composição irresistível." },
+        ];
+
+        // ==========================================
+        // GERENCIAMENTO DO CARRINHO (localStorage)
+        // ==========================================
+        function getCarrinho() {
+            return JSON.parse(localStorage.getItem('dc_carrinho') || '[]');
+        }
+
+        function salvarCarrinho(carrinho) {
+            localStorage.setItem('dc_carrinho', JSON.stringify(carrinho));
+            atualizarBadge();
+        }
+
+        function atualizarBadge() {
+            const carrinho = getCarrinho();
+            const total = carrinho.reduce((s, i) => s + i.qty, 0);
+            const badge = document.getElementById('badge-nav');
+            if (badge) badge.textContent = total;
+        }
+
+        function adicionarCarrinho(produto) {
+            const carrinho = getCarrinho();
+            const idx = carrinho.findIndex(i => i.n === produto.n);
+            if (idx >= 0) {
+                carrinho[idx].qty += 1;
+            } else {
+                carrinho.push({ ...produto, qty: 1 });
+            }
+            salvarCarrinho(carrinho);
+            mostrarToast('✓  ' + produto.n + ' adicionado ao carrinho');
+        }
+
+        function mostrarToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // ==========================================
+        // RENDERIZAR VITRINE
+        // ==========================================
+        function renderizarVitrine() {
+            const vFem  = document.getElementById('vitrine-feminina');
+            const vMasc = document.getElementById('vitrine-masculina');
+            if (vFem)  vFem.innerHTML  = '';
+            if (vMasc) vMasc.innerHTML = '';
+
+            PRODUTOS.forEach(p => {
+                const query = `nome=${encodeURIComponent(p.n)}&preco=${encodeURIComponent('R$ ' + p.p.toFixed(2).replace('.', ','))}&img=${encodeURIComponent(p.i)}&desc=${encodeURIComponent(p.d)}&familia=${encodeURIComponent(p.f)}`;
+                const urlProduto = `produto.html?${query}`;
+
+                const card = document.createElement('div');
+                card.className = 'produto-card';
+                card.innerHTML = `
+                    <a href="${urlProduto}" style="text-decoration:none;color:inherit;">
+                        <div class="produto-card-img-wrapper">
+                            <img src="${p.i}" alt="${p.n}" loading="lazy">
+                        </div>
+                    </a>
+                    <div class="produto-card-body">
+                        <a href="${urlProduto}" style="text-decoration:none;color:inherit;">
+                            <h3>${p.n}</h3>
+                            <p class="familia-tag">${p.f}</p>
+                        </a>
+                        <p class="preco">R$ ${p.p.toFixed(2).replace('.', ',')}</p>
+                        <div class="produto-card-actions">
+                            <button class="btn-ver-produto" onclick="window.location.href='${urlProduto}'">Ver mais</button>
+                            <button class="btn-add-card" onclick="adicionarCarrinho({n:'${p.n.replace(/'/g,"\\'")}',p:${p.p},i:'${p.i}',g:'${p.g}',d:'${p.d.replace(/'/g,"\\'")}',f:'${p.f}'})">+ Carrinho</button>
+                        </div>
+                    </div>
+                `;
+
+                if (p.g === 'feminino' && vFem)  vFem.appendChild(card);
+                if (p.g === 'masculino' && vMasc) vMasc.appendChild(card);
+            });
+        }
+
+        // ==========================================
+        // CARROSSEL
+        // ==========================================
+        function scrollCarrossel(id, dir) {
+            const vitrine = document.getElementById(id);
+            if (!vitrine) return;
+            const card = vitrine.querySelector('.produto-card');
+            if (!card) return;
+            const gap = parseInt(window.getComputedStyle(vitrine).gap) || 22;
+            vitrine.scrollBy({ left: dir * (card.offsetWidth + gap), behavior: 'smooth' });
+        }
+
+        // ==========================================
+        // SCROLL SUAVE
+        // ==========================================
+        function rolarParaSecao(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // ==========================================
+        // MENU MOBILE
+        // ==========================================
+        const hamburger = document.getElementById('hamburger');
+        const menuContainer = document.getElementById('menu-container');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            menuContainer.classList.toggle('open');
+        });
+
+        function fecharMenu() {
+            hamburger.classList.remove('active');
+            menuContainer.classList.remove('open');
+        }
+
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !menuContainer.contains(e.target)) {
+                fecharMenu();
+            }
+        });
+
+        // ==========================================
+        // INICIALIZAÇÃO
+        // ==========================================
+        window.addEventListener('DOMContentLoaded', () => {
+            renderizarVitrine();
+            atualizarBadge();
+        });
+    </script>
+</body>
+</html>
